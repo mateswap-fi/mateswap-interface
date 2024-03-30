@@ -1,7 +1,12 @@
 {
   "name": "mateswapfi-interface",
   "version": "1.0.0",
-  "private": true,
+  "engines": {
+    "node": "18.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "next start",
     "build": "yarn lingui && next build",
