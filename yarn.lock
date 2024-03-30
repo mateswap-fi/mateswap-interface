@@ -1066,35 +1066,6 @@
   resolved "https://registry.yarnpkg.com/@bitauth/libauth/-/libauth-1.19.0.tgz#61193fb44d95ececd195a4feadfce0b0ba9f981d"
   integrity sha512-UtfCijrCcPCQdstlxiv29hBNuYs/1hqeDMgS6CPjxps7r7/y/0p9TRGDx65fczlO12Pa5rQdWO/GzwsXo03uIg==
 
-"@boneswapfi/core@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@boneswapfi/core/-/core-0.0.4.tgz#5be0e3550993c3894de60ae4cdac216fbcb6d2fa"
-  integrity sha512-fONgjPpU4Plh8aOxly1S08vfPv6g9SbDwny5jDp9IaRV0QjNOuOUYjaPTIXJaKdtm7oD7Ilejj7+thuxrRfiCA==
-  dependencies:
-    eip-712 "^0.4.3"
-
-"@boneswapfi/default-token-list@0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@boneswapfi/default-token-list/-/default-token-list-0.0.7.tgz#ebde6d1c3811699e278445ab0293448940967b1b"
-  integrity sha512-+9Zhf7gep0QZJqC4IRr9mSsX+Whl888HxqywIcvS5oLyFGZv8sbbx7yUkBwZOrMU9ykDzHNvlf2KirLunNjyFQ==
-  dependencies:
-    commitlint "^13.1.0"
-    lint-staged "^11.1.2"
-    yarn "^1.22.19"
-
-"@boneswapfi/sdk@^0.0.21":
-  version "0.0.21"
-  resolved "https://registry.yarnpkg.com/@boneswapfi/sdk/-/sdk-0.0.21.tgz#3820e7b0b67faa28030ce3012cffcc87529243c5"
-  integrity sha512-rJt2aewprTVIz3mm7eyKbBAi/PwbdezsfNExFryXATxnmoaoaa2+FwHogK5tlnl1LycaQZuPilbubynVBBteiA==
-  dependencies:
-    big.js "^6.1.0"
-    decimal.js-light "^2.5.0"
-    isomorphic-unfetch "^3.1.0"
-    jsbi "^3.1.0"
-    tiny-invariant "^1.1.0"
-    tiny-warning "^1.0.3"
-    toformat "^2.0.0"
-
 "@chaitanyapotti/random-id@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@chaitanyapotti/random-id/-/random-id-1.0.3.tgz#f52f647cfe9f79fc7723ea2b01b0ad3889204002"
@@ -2259,6 +2230,35 @@
     json5 "^2.2.0"
     messageformat-parser "^4.1.3"
     ramda "^0.27.1"
+
+"@mateswapfi/core@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@mateswapfi/core/-/core-0.0.1.tgz#ea9172707ebbe16de0e7cdc341eec89b9330d0b7"
+  integrity sha512-stoHcA6kNo1aHmFdOTJfAZoXYhwIuAgy/l0pP8VmagMNnhl4K5aiXhu5GEf3wmAmdBbra2o84Jmf0tyMUCcFMA==
+  dependencies:
+    eip-712 "^0.4.3"
+
+"@mateswapfi/default-token-list@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@mateswapfi/default-token-list/-/default-token-list-0.0.1.tgz#854d767793ca549f1e37e58e6ad7701324631b6e"
+  integrity sha512-fsjGsDpZ/cyhSfIlaIb9BJJAvIXqaISyW2HceCfuA/3HOSxeSVO5e18kKcfXTTesAqAKVyO13AxTteF93h8vzA==
+  dependencies:
+    commitlint "^13.1.0"
+    lint-staged "^11.1.2"
+    yarn "^1.22.19"
+
+"@mateswapfi/sdk@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@mateswapfi/sdk/-/sdk-0.0.2.tgz#a4623ae40e75f8f80175bc07a874fdb052ea25cb"
+  integrity sha512-OJa8lQNdiGV81e2EC8J1JieZY8Yn68eoOfycKpdGmynhOzhNmFdbVzPiFDb1nj1VNDC0CdasWtL7sgBW+gA8VA==
+  dependencies:
+    big.js "^6.1.0"
+    decimal.js-light "^2.5.0"
+    isomorphic-unfetch "^3.1.0"
+    jsbi "^3.1.0"
+    tiny-invariant "^1.1.0"
+    tiny-warning "^1.0.3"
+    toformat "^2.0.0"
 
 "@metamask/jazzicon@^2.0.0":
   version "2.0.0"

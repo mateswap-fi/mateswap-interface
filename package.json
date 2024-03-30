@@ -1,5 +1,5 @@
 {
-  "name": "boneswap-interface",
+  "name": "mateswapfi-interface",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -27,9 +27,9 @@
   },
   "devDependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
-    "@boneswapfi/core": "0.0.4",
-    "@boneswapfi/default-token-list": "0.0.7",
-    "@boneswapfi/sdk": "^0.0.21",
+    "@mateswapfi/core": "0.0.1",
+    "@mateswapfi/default-token-list": "0.0.1",
+    "@mateswapfi/sdk": "^0.0.2",
     "@commitlint/cli": "^13.0.0",
     "@commitlint/config-conventional": "^13.0.0",
     "@ethereumjs/common": "^2.4.0",
