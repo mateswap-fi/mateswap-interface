@@ -1,14 +1,14 @@
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 
-const Dogechain = 'https://raw.githubusercontent.com/boneswap-fi/icons/master/network/dogechain.jpg'
-const DogechainTestnet = 'https://raw.githubusercontent.com/boneswap-fi/icons/master/network/dogechain_testnet.jpg'
+const Lachain = 'https://raw.githubusercontent.com/mateswap-fi/icons/master/network/Lachain.jpg'
+const LachainTestnet = 'https://raw.githubusercontent.com/mateswap-fi/icons/master/network/Lachain_testnet.jpg'
 
 export const NETWORK_ICON = {
-  [ChainId.DOGECHAIN]: Dogechain,
-  [ChainId.DOGECHAIN_TESTNET]: DogechainTestnet,
+  [ChainId.LACHAIN]: Lachain,
+  [ChainId.LACHAIN_TESTNET]: LachainTestnet,
 }
 
 export const NETWORK_LABEL: { [chainId in ChainId]?: string } = {
-  [ChainId.DOGECHAIN]: 'Dogechain',
-  [ChainId.DOGECHAIN_TESTNET]: 'Dogechain Testnet',
+  [ChainId.LACHAIN]: 'Lachain',
+  [ChainId.LACHAIN_TESTNET]: 'Lachain Testnet',
 }

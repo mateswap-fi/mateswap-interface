@@ -1,4 +1,4 @@
-import { Currency, Trade as V2Trade } from '@boneswapfi/sdk'
+import { Currency, Trade as V2Trade } from '@mateswapfi/sdk'
 import { Field, replaceCreateState, selectCurrency, switchCurrencies, typeInput } from './actions'
 import { useAppDispatch, useAppSelector } from '../hooks'
 
@@ -25,7 +25,7 @@ export function useCreateActionHandlers(): {
       dispatch(
         selectCurrency({
           field,
-          currencyId: currency.isToken ? currency.address : currency.isNative ? 'WDOGE' : '',
+          currencyId: currency.isToken ? currency.address : currency.isNative ? 'LAC' : '',
         })
       )
     },

@@ -2,7 +2,7 @@ import { NETWORK_ICON, NETWORK_LABEL } from '../../config/networks'
 import React, { FC, Fragment } from 'react'
 import { Trans, useLingui } from '@lingui/react'
 
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import HeadlessUIModal from '../../components/Modal/HeadlessUIModal'
 import Image from 'next/image'
 import NavLink from '../../components/NavLink'
@@ -56,7 +56,7 @@ const Component: FC<NetworkGuardProps> = ({ children, networks = [] }) => {
                 onClick={() => {
                   const params = SUPPORTED_NETWORKS[key]
                   cookie.set('chainId', key)
-                  if (key === ChainId.DOGECHAIN) {
+                  if (key === ChainId.LACHAIN) {
                     library?.send('wallet_switchEthereumChain', [{ chainId: '0x7D0' }, account])
                   } else {
                     library?.send('wallet_addEthereumChain', [params, account])

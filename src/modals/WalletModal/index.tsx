@@ -21,7 +21,7 @@ import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import usePrevious from '../../hooks/usePrevious'
 import { SUPPORTED_NETWORKS } from '../NetworkModal'
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import cookie from 'cookie-cutter'
 import { useActiveWeb3React } from '../../hooks'
 
@@ -154,10 +154,10 @@ export default function WalletModal({
     }
   }, [toggleWalletModal, connector])
 
-  const switchToDogechain = async () => {
+  const switchToLachain = async () => {
     // `library` context here is invalid, we use the direct communiaction with Metamask via window.ethereum
-    const params = SUPPORTED_NETWORKS[ChainId.DOGECHAIN]
-    cookie.set('chainId', ChainId.DOGECHAIN)
+    const params = SUPPORTED_NETWORKS[ChainId.LACHAIN]
+    cookie.set('chainId', ChainId.LACHAIN)
 
     const ethereum = window.ethereum as any;
     try {
@@ -282,13 +282,13 @@ export default function WalletModal({
           </HeaderRow>
           <div>
             {error instanceof UnsupportedChainIdError ? (
-              <h5>{i18n._(t`Please connect to the appropriate Dogechain network.`)}</h5>
+              <h5>{i18n._(t`Please connect to the appropriate Lachain network.`)}</h5>
             ) : (
               i18n._(t`Error connecting. Try refreshing the page.`)
             )}
             <div style={{ marginTop: '1rem' }} />
-            <ButtonConfirmed size="sm" onClick={switchToDogechain}>
-              {i18n._(t`Switch to Dogechain Network`)}
+            <ButtonConfirmed size="sm" onClick={switchToLachain}>
+              {i18n._(t`Switch to Lachain Network`)}
             </ButtonConfirmed>
 
             <div style={{ marginTop: '1rem' }} />
@@ -327,7 +327,7 @@ export default function WalletModal({
           )}
           {walletView !== WALLET_VIEWS.PENDING && (
             <div className="flex flex-col text-center">
-              <div className="text-secondary">{i18n._(t`New to Dogechain?`)}</div>
+              <div className="text-secondary">{i18n._(t`New to Lachain?`)}</div>
               <ExternalLink href="https://ethereum.org/wallets/" color="blue">
                 {i18n._(t`Learn more about wallets`)}
               </ExternalLink>

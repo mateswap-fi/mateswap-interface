@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { ARCHER_GAS_URI } from '../config/archer'
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import useActiveWeb3React from './useActiveWeb3React'
 
 type T = Record<string, string>
@@ -22,7 +22,7 @@ export default function useArcherMinerTips(): { status: string; data: T } {
   useEffect(() => {
     const fetchData = async () => {
       setStatus('fetching')
-      const response = await fetch(ARCHER_GAS_URI[ChainId.DOGECHAIN], {
+      const response = await fetch(ARCHER_GAS_URI[ChainId.LACHAIN], {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

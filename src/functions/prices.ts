@@ -4,7 +4,7 @@ import {
   ALLOWED_PRICE_IMPACT_MEDIUM,
   BLOCKED_PRICE_IMPACT_NON_EXPERT,
 } from '../constants'
-import { ChainId, Currency, CurrencyAmount, Fraction, JSBI, Percent, Trade, TradeType } from '@boneswapfi/sdk'
+import { ChainId, Currency, CurrencyAmount, Fraction, JSBI, Percent, Trade, TradeType } from '@mateswapfi/sdk'
 
 import { Field } from '../state/swap/actions'
 import { basisPointsToPercent } from './convert'

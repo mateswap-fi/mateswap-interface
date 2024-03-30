@@ -1,8 +1,8 @@
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import { GRAPH_HOST } from '../constants'
 import { request } from 'graphql-request'
 
-export const status = async (chainId = ChainId.DOGECHAIN, subgraphName) =>
+export const status = async (chainId = ChainId.LACHAIN, subgraphName) =>
   request(
     `${GRAPH_HOST[chainId]}/index-node/graphql`,
     `

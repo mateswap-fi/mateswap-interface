@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Percent } from '@boneswapfi/sdk'
+import { ChainId, JSBI, Percent } from '@mateswapfi/sdk'
 
 export const POOL_DENY = ['14', '29', '45', '30']
 
@@ -56,7 +56,7 @@ export const BLOCKED_ADDRESSES: string[] = [
 ]
 
 export const ANALYTICS_URL: { [chainId in ChainId]?: string } = {
-  // [ChainId.DOGECHAIN]: 'https://analytics.boneswap.fi',
+  // [ChainId.LACHAIN]: 'https://analytics.mateswap.fi',
 }
 
 export const EIP_1559_ACTIVATION_BLOCK: { [chainId in ChainId]?: number } = {}

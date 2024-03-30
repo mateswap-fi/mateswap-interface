@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, JSBI } from '@boneswapfi/sdk'
+import { Currency, CurrencyAmount, Fraction, JSBI } from '@mateswapfi/sdk'
 
 import React from 'react'
 

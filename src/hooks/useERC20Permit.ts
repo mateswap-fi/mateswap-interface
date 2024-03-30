@@ -1,5 +1,5 @@
-import { ChainId, Currency, CurrencyAmount, JSBI, Percent, Token, TradeType, Trade as V2Trade } from '@boneswapfi/sdk'
-import { BONE } from '../config/tokens'
+import { ChainId, Currency, CurrencyAmount, JSBI, Percent, Token, TradeType, Trade as V2Trade } from '@mateswapfi/sdk'
+import { MATE } from '../config/tokens'
 import { useMemo, useState } from 'react'
 
 import { splitSignature } from '@ethersproject/bytes'
@@ -30,11 +30,11 @@ const PERMITTABLE_TOKENS: {
     [checksummedTokenAddress: string]: PermitInfo
   }
 } = {
-  [ChainId.DOGECHAIN]: {
-    [BONE[ChainId.DOGECHAIN].address]: { type: PermitType.AMOUNT, name: 'BoneToken' },
+  [ChainId.LACHAIN]: {
+    [MATE[ChainId.LACHAIN].address]: { type: PermitType.AMOUNT, name: 'MateToken' },
   },
-  [ChainId.DOGECHAIN_TESTNET]: {
-    [BONE[ChainId.DOGECHAIN_TESTNET].address]: { type: PermitType.AMOUNT, name: 'BoneToken' },
+  [ChainId.LACHAIN_TESTNET]: {
+    [MATE[ChainId.LACHAIN_TESTNET].address]: { type: PermitType.AMOUNT, name: 'MateToken' },
   },
 }
 
@@ -243,7 +243,7 @@ export function useERC20Permit(
 
 const REMOVE_V2_LIQUIDITY_PERMIT_INFO: PermitInfo = {
   version: '1',
-  name: 'BoneSwap LP Token',
+  name: 'MateSwap LP Token',
   type: PermitType.AMOUNT,
 }
 

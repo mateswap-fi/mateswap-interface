@@ -5,7 +5,7 @@ import {
 } from "../state/transactions/hooks";
 import useLPTokensState, { LPTokensState } from "./useLPTokensState";
 
-import { ChainId } from "@boneswapfi/sdk";
+import { ChainId } from "@mateswapfi/sdk";
 import { parseUnits } from "@ethersproject/units";
 import { useActiveWeb3React } from "./useActiveWeb3React";
 import useSushiRoll from "./useSushiRoll";
@@ -53,14 +53,14 @@ const useMigrateState: () => MigrateState = () => {
       console.log('onMigrate', units)
       let exchange;
 
-      if (chainId === ChainId.DOGECHAIN) {
+      if (chainId === ChainId.LACHAIN) {
         exchange = "YodeSwap";
-      } else if (chainId === ChainId.DOGECHAIN_TESTNET) {
+      } else if (chainId === ChainId.LACHAIN_TESTNET) {
         exchange = "YodeSwap Testnet";
       }
 
       addTransaction(tx, {
-        summary: `Migrate ${exchange} ${state.selectedLPToken.symbol} liquidity to BoneSwap`,
+        summary: `Migrate ${exchange} ${state.selectedLPToken.symbol} liquidity to MateSwap`,
       });
       setPendingMigrationHash(tx.hash);
 

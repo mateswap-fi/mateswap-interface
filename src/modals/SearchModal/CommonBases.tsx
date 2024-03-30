@@ -1,4 +1,4 @@
-import { ChainId, Currency, Token, currencyEquals } from '@boneswapfi/sdk'
+import { ChainId, Currency, Token, currencyEquals } from '@mateswapfi/sdk'
 
 import { AutoColumn } from '../../components/Column'
 import { AutoRow } from '../../components/Row'

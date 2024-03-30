@@ -1,12 +1,12 @@
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import { GRAPH_HOST } from '../constants'
 import { request } from 'graphql-request'
 import { barHistoriesQuery, barQuery } from '../queries/bar'
 import { useActiveWeb3React } from '../../../hooks'
 
 const BAR = {
-  [ChainId.DOGECHAIN]: 'BoneSwap/bar',
-  [ChainId.DOGECHAIN_TESTNET]: 'BoneSwap/bar',
+  [ChainId.LACHAIN]: 'MateSwap/bar',
+  [ChainId.LACHAIN_TESTNET]: 'MateSwap/bar',
 }
 
 export const bar = async (query, variables = undefined) => {

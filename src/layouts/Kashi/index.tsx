@@ -63,11 +63,11 @@ export default function Layout({
                     </a>
                   </NavLink>
 
-                  <NavLink href="/bonelend/create">
+                  <NavLink href="/matelend/create">
                     <a
                       className={
                         'px-2 sm:px-4 flex items-center font-medium ' +
-                        (router.pathname.startsWith('/bonelend/create')
+                        (router.pathname.startsWith('/matelend/create')
                           ? 'text-high-emphesis'
                           : 'text-secondary hover:text-primary')
                       }

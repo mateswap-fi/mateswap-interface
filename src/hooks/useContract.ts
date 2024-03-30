@@ -11,10 +11,10 @@ import {
   MASTERCHEF_V2_ADDRESS,
   MULTICALL2_ADDRESS,
   ROUTER_ADDRESS,
-  BONE_ADDRESS,
-  BONEROLL_ADDRESS,
+  MATE_ADDRESS,
+  MATEROLL_ADDRESS,
   WNATIVE_ADDRESS,
-} from '@boneswapfi/sdk'
+} from '@mateswapfi/sdk'
 
 import {
   ARGENT_WALLET_DETECTOR_ABI,
@@ -40,8 +40,8 @@ import MASTERCHEF_V2_ABI from '../constants/abis/masterchef-v2.json'
 import MULTICALL2_ABI from '../constants/abis/multicall2.json'
 import ROUTER_ABI from '../constants/abis/router.json'
 import SUSHI_ABI from '../constants/abis/sushi.json'
-import SUSHIROLL_ABI from '@boneswapfi/core/abi/SushiRoll.json'
-import WWDOGE_ABI from '../constants/abis/weth.json'
+import SUSHIROLL_ABI from '@mateswapfi/core/abi/SushiRoll.json'
+import WLAC_ABI from '../constants/abis/weth.json'
 import ZENKO_ABI from '../constants/abis/zenko.json'
 import { getContract } from '../functions/contract'
 import { useActiveWeb3React } from './useActiveWeb3React'
@@ -70,9 +70,9 @@ export function useTokenContract(tokenAddress?: string, withSignerIfPossible?: b
   return useContract(tokenAddress, ERC20_ABI, withSignerIfPossible)
 }
 
-export function useWWDOGEContract(withSignerIfPossible?: boolean): Contract | null {
+export function useWLACContract(withSignerIfPossible?: boolean): Contract | null {
   const { chainId } = useActiveWeb3React()
-  return useContract(chainId && WNATIVE_ADDRESS[chainId], WWDOGE_ABI, withSignerIfPossible)
+  return useContract(chainId && WNATIVE_ADDRESS[chainId], WLAC_ABI, withSignerIfPossible)
 }
 
 export function useArgentWalletDetectorContract(): Contract | null {
@@ -113,7 +113,7 @@ export function useMulticall2Contract() {
 
 export function useSushiContract(withSignerIfPossible = true): Contract | null {
   const { chainId } = useActiveWeb3React()
-  return useContract(chainId && BONE_ADDRESS[chainId], SUSHI_ABI, withSignerIfPossible)
+  return useContract(chainId && MATE_ADDRESS[chainId], SUSHI_ABI, withSignerIfPossible)
 }
 
 export function useMasterChefContract(withSignerIfPossible?: boolean): Contract | null {
@@ -161,7 +161,7 @@ export function useChainlinkOracle(): Contract | null {
 
 export function useSushiRollContract(): Contract | null {
   const { chainId } = useActiveWeb3React()
-  return useContract(chainId && BONEROLL_ADDRESS[chainId], SUSHIROLL_ABI, false)
+  return useContract(chainId && MATEROLL_ADDRESS[chainId], SUSHIROLL_ABI, false)
 }
 
 export function useComplexRewarderContract(address, withSignerIfPossible?: boolean): Contract | null {

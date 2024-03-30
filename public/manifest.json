@@ -1,8 +1,8 @@
 {
-  "name": "BoneSwap",
-  "short_name": "BoneSwap",
+  "name": "MateSwap",
+  "short_name": "MateSwap",
   "lang": "en",
-  "description": "Trade, launch, stake, farm, invest, automate, build on the premier DeFi platform of Dogechain",
+  "description": "Trade, launch, stake, farm, invest, automate, build on the premier DeFi platform of Lachain",
   "background_color": "#0D0415",
   "theme_color": "#F338C3",
   "dir": "ltr",

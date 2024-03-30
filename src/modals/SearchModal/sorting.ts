@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@boneswapfi/sdk'
+import { Currency, CurrencyAmount, Token } from '@mateswapfi/sdk'
 
 import { useAllTokenBalances } from '../../state/wallet/hooks'
 import { useMemo } from 'react'

@@ -3,7 +3,7 @@ import {
   ChainId,
   Currency,
   CurrencyAmount,
-  Dogechain,
+  Lachain,
   JSBI,
   Percent,
   Router,
@@ -11,7 +11,7 @@ import {
   Trade as V2Trade,
   Fraction,
   ONE
-} from '@boneswapfi/sdk'
+} from '@mateswapfi/sdk'
 import { arrayify, hexlify, splitSignature } from '@ethersproject/bytes'
 import { isAddress, isZero } from '../functions/validate'
 import { useFactoryContract, useRouterContract } from './useContract'
@@ -124,7 +124,7 @@ export function useSwapCallArguments(
             allowedSlippage,
             recipient,
             ttl: deadline.toNumber(),
-            ethTip: CurrencyAmount.fromRawAmount(Dogechain.onChain(ChainId.DOGECHAIN), archerETHTip),
+            ethTip: CurrencyAmount.fromRawAmount(Lachain.onChain(ChainId.LACHAIN), archerETHTip),
           })
         )
       }
@@ -443,7 +443,7 @@ export function useSwapCallback(
               const chainNames: {
                 [chainId in ChainId]?: string
               } = {
-                [ChainId.DOGECHAIN]: 'dogechain',
+                [ChainId.LACHAIN]: 'Lachain',
               }
               const chain = chainNames[chainId]
               if (!chain) throw new Error(`Unknown chain ID ${chainId} when building transaction`)

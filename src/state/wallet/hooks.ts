@@ -1,9 +1,9 @@
-import { Currency, CurrencyAmount, NATIVE, JSBI, Token } from '@boneswapfi/sdk'
+import { Currency, CurrencyAmount, NATIVE, JSBI, Token } from '@mateswapfi/sdk'
 import { useMultipleContractSingleData, useSingleContractMultipleData } from '../multicall/hooks'
 
 import ERC20_ABI from '../../constants/abis/erc20.json'
 import { Interface } from '@ethersproject/abi'
-import { BONE } from './../../config/tokens'
+import { MATE } from './../../config/tokens'
 import { isAddress } from '../../functions/validate'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useAllTokens } from '../../hooks/Tokens'

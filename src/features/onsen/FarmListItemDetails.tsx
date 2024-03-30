@@ -1,5 +1,5 @@
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
-import { ChainId, CurrencyAmount, JSBI, MASTERCHEF_ADDRESS, MASTERCHEF_V2_ADDRESS, Token, ZERO } from '@boneswapfi/sdk'
+import { ChainId, CurrencyAmount, JSBI, MASTERCHEF_ADDRESS, MASTERCHEF_V2_ADDRESS, Token, ZERO } from '@mateswapfi/sdk'
 import { Chef, PairType } from './enum'
 import { Disclosure, Transition } from '@headlessui/react'
 import React, { useState } from 'react'
@@ -54,11 +54,11 @@ const FarmListItem = ({ farm }) => {
 
   const APPROVAL_ADDRESSES = {
     [Chef.MASTERCHEF]: {
-      [ChainId.DOGECHAIN]: MASTERCHEF_ADDRESS[ChainId.DOGECHAIN],
-      [ChainId.DOGECHAIN_TESTNET]: MASTERCHEF_ADDRESS[ChainId.DOGECHAIN_TESTNET],
+      [ChainId.LACHAIN]: MASTERCHEF_ADDRESS[ChainId.LACHAIN],
+      [ChainId.LACHAIN_TESTNET]: MASTERCHEF_ADDRESS[ChainId.LACHAIN_TESTNET],
     },
     [Chef.MASTERCHEF_V2]: {
-      [ChainId.DOGECHAIN]: MASTERCHEF_V2_ADDRESS[ChainId.DOGECHAIN]
+      [ChainId.LACHAIN]: MASTERCHEF_V2_ADDRESS[ChainId.LACHAIN]
     },
   }
 
@@ -235,7 +235,7 @@ const FarmListItem = ({ farm }) => {
                 setPendingTx(false)
               }}
             >
-              {i18n._(t`Harvest`) + ` ${formatNumber(pendingSushi.toFixed(18))} BONE ${
+              {i18n._(t`Harvest`) + ` ${formatNumber(pendingSushi.toFixed(18))} MATE ${
                 farm.rewards.length > 1 ? `& ${formatNumber(reward)} ${farm.rewards[1].token}` : ''
               }`}
             </Button>

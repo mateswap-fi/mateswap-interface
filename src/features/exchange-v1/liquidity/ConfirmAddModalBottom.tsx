@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@boneswapfi/sdk'
+import { Currency, CurrencyAmount, Fraction, Percent } from '@mateswapfi/sdk'
 
 import Button from '../../../components/Button'
 import { Field } from '../../../state/mint/actions'

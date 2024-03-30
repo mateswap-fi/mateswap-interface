@@ -1,5 +1,5 @@
 import { AppDispatch } from '../state'
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import { TokenList } from '@uniswap/token-lists'
 import { fetchTokenList } from '../state/lists/actions'
 import { getNetworkLibrary } from '../functions/getNetworkLibrary'
@@ -16,8 +16,8 @@ export function useFetchListCallback(): (listUrl: string, sendDispatch?: boolean
 
   const ensResolver = useCallback(
     (ensName: string) => {
-      if (!library || chainId !== ChainId.DOGECHAIN) {
-        if (chainId === ChainId.DOGECHAIN) {
+      if (!library || chainId !== ChainId.LACHAIN) {
+        if (chainId === ChainId.LACHAIN) {
           const networkLibrary = getNetworkLibrary()
           if (networkLibrary) {
             return resolveENSContentHash(ensName, networkLibrary)

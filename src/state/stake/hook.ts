@@ -1,4 +1,4 @@
-// import { CurrencyAmount, JSBI, Token } from '@boneswapfi/sdk'
+// import { CurrencyAmount, JSBI, Token } from '@mateswapfi/sdk'
 
 // import { t } from '@lingui/macro'
 // import { tryParseAmount } from '../../functions'

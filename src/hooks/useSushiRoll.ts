@@ -1,4 +1,4 @@
-import { ChainId } from "@boneswapfi/sdk";
+import { ChainId } from "@mateswapfi/sdk";
 // import LPToken from "../types/LPToken";
 import { ethers } from "ethers";
 import { BigNumber } from '@ethersproject/bignumber'
@@ -15,9 +15,9 @@ const useSushiRoll = (version: "v1" | "v2" = "v2") => {
 
   let from = "";
 
-  if (chainId === ChainId.DOGECHAIN) {
+  if (chainId === ChainId.LACHAIN) {
     from = "YodeSwap";
-  } else if (chainId === ChainId.DOGECHAIN_TESTNET) {
+  } else if (chainId === ChainId.LACHAIN_TESTNET) {
     from = "YodeSwap";
   }
 

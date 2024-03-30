@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, Token } from '@boneswapfi/sdk'
+import { ChainId, Currency, NATIVE, Token } from '@mateswapfi/sdk'
 import React, { KeyboardEvent, RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { filterTokens, useSortedTokensByQuery } from '../../functions/filtering'
 import { useAllTokens, useIsUserAddedToken, useSearchInactiveTokenLists, useToken } from '../../hooks/Tokens'
@@ -107,7 +107,7 @@ export function CurrencySearch({
   const filteredSortedTokensWithETH: Currency[] = useMemo(() => {
     const s = debouncedQuery.toLowerCase().trim()
 
-    if (s === '' || s === 'w' || s === 'wd' || s === 'wdo' || s === 'wdog' || s === 'wdoge') {
+    if (s === '' || s === 'w' || s === 'wd' || s === 'wdo' || s === 'wdog' || s === 'wlac') {
       console.log("**s** INSIDE IF 2");
       return ether ? [ether, ...filteredSortedTokens] : filteredSortedTokens
     }
@@ -141,7 +141,7 @@ export function CurrencySearch({
       if (e.key === 'Enter') {
         const s = debouncedQuery.toLowerCase().trim()
         console.log("**s** 2:", s);
-        if (s === 'wdoge' && ether) {
+        if (s === 'wlac' && ether) {
           handleCurrencySelect(ether)
         } else if (filteredSortedTokensWithETH.length > 0) {
           if (

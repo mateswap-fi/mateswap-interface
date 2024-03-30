@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, Token, WNATIVE, WNATIVE_ADDRESS, currencyEquals } from '@boneswapfi/sdk'
+import { ChainId, Currency, NATIVE, Token, WNATIVE, WNATIVE_ADDRESS, currencyEquals } from '@mateswapfi/sdk'
 import { NEVER_RELOAD, useSingleCallResult } from '../state/multicall/hooks'
 import { TokenAddressMap, useAllLists, useInactiveListUrls, useUnsupportedTokenList } from './../state/lists/hooks'
 import { useBytes32TokenContract, useTokenContract } from './useContract'
@@ -185,7 +185,7 @@ export function useToken(tokenAddress?: string): Token | undefined | null {
 export function useCurrency(currencyId: string | undefined): Currency | null | undefined {
   const { chainId } = useActiveWeb3React()
 
-  const useNative = currencyId?.toUpperCase() === 'WDOGE'
+  const useNative = currencyId?.toUpperCase() === 'LAC'
 
   if (useNative) {
     currencyId = WNATIVE_ADDRESS[chainId]
@@ -194,7 +194,7 @@ export function useCurrency(currencyId: string | undefined): Currency | null | u
   const token = useToken(useNative ? undefined : currencyId)
 
   // const extendedEther = useMemo(() => (chainId ? ExtendedEther.onChain(chainId) : undefined), [chainId])
-  // const weth = chainId ? WWDOGE_EXTENDED[chainId] : undefined
+  // const weth = chainId ? WLAC_EXTENDED[chainId] : undefined
 
   const native = useMemo(() => (chainId ? NATIVE[chainId] : undefined), [chainId])
   if (useNative) return native;

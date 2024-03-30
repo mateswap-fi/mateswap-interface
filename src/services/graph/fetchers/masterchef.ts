@@ -7,23 +7,23 @@ import {
   poolsV2Query,
 } from '../queries'
 
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import { GRAPH_HOST } from '../constants'
 import { getTokenSubset } from './exchange'
 import { request } from 'graphql-request'
 
 export const MASTERCHEF_V2 = {
-  [ChainId.DOGECHAIN]: 'boneswap/master-chefv2',
+  [ChainId.LACHAIN]: 'mateswap/master-chefv2',
 }
 
-export const masterChefV2 = async (query, chainId = ChainId.DOGECHAIN, variables = undefined) =>
+export const masterChefV2 = async (query, chainId = ChainId.LACHAIN, variables = undefined) =>
   request(`${GRAPH_HOST[chainId]}/subgraphs/name/${MASTERCHEF_V2[chainId]}`, query, variables)
 
 export const MASTERCHEF_V1 = {
-  [ChainId.DOGECHAIN]: 'boneswap/master-chef',
+  [ChainId.LACHAIN]: 'mateswap/master-chef',
 }
 
-export const masterChefV1 = async (query, chainId = ChainId.DOGECHAIN, variables = undefined) =>
+export const masterChefV1 = async (query, chainId = ChainId.LACHAIN, variables = undefined) =>
   request(`${GRAPH_HOST[chainId]}/subgraphs/name/${MASTERCHEF_V1[chainId]}`, query, variables)
 
 export const getMasterChefV1TotalAllocPoint = async () => {
@@ -55,7 +55,7 @@ export const getMasterChefV2Farms = async (variables = undefined) => {
 
   console.log("getMasterChefV2Farms pools: ", pools);
 
-  const tokens = await getTokenSubset(ChainId.DOGECHAIN, {
+  const tokens = await getTokenSubset(ChainId.LACHAIN, {
     tokenAddresses: Array.from(pools.map((pool) => pool.rewarder.rewardToken)),
   })
 

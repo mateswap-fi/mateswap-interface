@@ -1,4 +1,4 @@
-import { Currency, Trade, TradeType } from '@boneswapfi/sdk'
+import { Currency, Trade, TradeType } from '@mateswapfi/sdk'
 import React, { Fragment, memo } from 'react'
 
 import { ChevronRightIcon } from '@heroicons/react/outline'

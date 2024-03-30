@@ -1,4 +1,4 @@
-import { Currency, Price } from '@boneswapfi/sdk'
+import { Currency, Price } from '@mateswapfi/sdk'
 import React, { useCallback } from 'react'
 
 import Typography from '../../../components/Typography'

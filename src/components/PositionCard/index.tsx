@@ -1,5 +1,5 @@
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/outline'
-import { CurrencyAmount, JSBI, Pair, Percent, Token } from '@boneswapfi/sdk'
+import { CurrencyAmount, JSBI, Pair, Percent, Token } from '@mateswapfi/sdk'
 import React, { useState } from 'react'
 import { currencyId, unwrappedToken } from '../../functions/currency'
 

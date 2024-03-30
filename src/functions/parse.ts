@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI } from '@boneswapfi/sdk'
+import { Currency, CurrencyAmount, JSBI } from '@mateswapfi/sdk'
 
 import { parseUnits } from '@ethersproject/units'
 

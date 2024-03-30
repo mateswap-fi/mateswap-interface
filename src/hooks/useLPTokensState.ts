@@ -1,4 +1,4 @@
-import { ChainId, Token, Currency, CurrencyAmount } from "@boneswapfi/sdk";
+import { ChainId, Token, Currency, CurrencyAmount } from "@mateswapfi/sdk";
 import { YODESWAP_TOKENS } from '../config/tokens'
 import { useTokenBalances } from '../state/wallet/hooks'
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -59,13 +59,13 @@ const useLPTokensState = () => {
         } as LPToken;
 
         const yodeswapPairs = {
-          [ChainId.DOGECHAIN]: {
+          [ChainId.LACHAIN]: {
           },
-          [ChainId.DOGECHAIN_TESTNET]: {
+          [ChainId.LACHAIN_TESTNET]: {
             '0x842692f8A4D0743e942dF5D52155a037327d4f3f': {
-              //TODO(ILoveBones): change addresses
+              //TODO(ILoveMates): change addresses
               tokenA: new Token(chainId as ChainId, '0x77beB0D017C743eCa0d22951A3b051A17D50f108', 18, 'YODE', 'YODE'),
-              tokenB: new Token(chainId as ChainId, '0x17F4FCF5b6E0A95D4eE331c8529041896A073F9b', 18, 'WDOGE', 'WDOGE'),
+              tokenB: new Token(chainId as ChainId, '0x17F4FCF5b6E0A95D4eE331c8529041896A073F9b', 18, 'LAC', 'LAC'),
             },
           },
         }

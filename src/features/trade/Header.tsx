@@ -1,4 +1,4 @@
-import { ChainId, Currency, Percent } from '@boneswapfi/sdk'
+import { ChainId, Currency, Percent } from '@mateswapfi/sdk'
 import React, { FC, useState, useEffect } from 'react'
 import { RefreshIcon } from '@heroicons/react/outline'
 import Gas from '../../components/Gas'
@@ -14,7 +14,7 @@ const getQuery = (input, output) => {
   if (!input && !output) return
 
   if (input && !output) {
-    return { inputCurrency: input.address || 'WDOGE' }
+    return { inputCurrency: input.address || 'LAC' }
   } else if (input && output) {
     return { inputCurrency: input.address, outputCurrency: output.address }
   }

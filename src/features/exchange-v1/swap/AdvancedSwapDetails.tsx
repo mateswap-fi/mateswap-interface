@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, Dogechain, Percent, TradeType, Trade as V2Trade } from '@boneswapfi/sdk'
+import { ChainId, Currency, CurrencyAmount, Lachain, Percent, TradeType, Trade as V2Trade } from '@mateswapfi/sdk'
 import React, { useMemo } from 'react'
 import { RowBetween, RowFixed } from '../../../components/Row'
 
@@ -89,9 +89,9 @@ export function AdvancedSwapDetails({ trade, allowedSlippage, minerBribe }: Adva
 
       <RowBetween>
         <RowFixed>
-          <div className="text-sm text-secondary">{i18n._(t`xBONE Fee`)}</div>
+          <div className="text-sm text-secondary">{i18n._(t`xMATE Fee`)}</div>
           <QuestionHelper
-            text={i18n._(t`A portion of each trade (0.05%) goes to xBONE holders as a protocol incentive.`)}
+            text={i18n._(t`A portion of each trade (0.05%) goes to xMATE holders as a protocol incentive.`)}
           />
         </RowFixed>
         <div className="text-sm font-bold text-high-emphesis">
@@ -114,7 +114,7 @@ export function AdvancedSwapDetails({ trade, allowedSlippage, minerBribe }: Adva
             <QuestionHelper text={i18n._(t`Tip to encourage miners to select this transaction.`)} />
           </RowFixed>
           <div className="text-sm font-bold text-high-emphesis">
-            {CurrencyAmount.fromRawAmount(Dogechain.onChain(ChainId.DOGECHAIN), minerBribe).toFixed(4)} WDOGE
+            {CurrencyAmount.fromRawAmount(Lachain.onChain(ChainId.LACHAIN), minerBribe).toFixed(4)} LAC
           </div>
         </RowBetween>
       )}

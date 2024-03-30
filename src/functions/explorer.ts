@@ -1,9 +1,9 @@
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 
 // Multichain Explorer
 const builders = {
-  dogechain_explorer: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
-    const prefix = `https://explorer.dogechain.dog/`
+  Lachain_explorer: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
+    const prefix = `https://explorer.Lachain.dog/`
     switch (type) {
       case 'transaction':
         return `${prefix}/tx/${data}`
@@ -11,8 +11,8 @@ const builders = {
         return `${prefix}/${type}/${data}`
     }
   },
-  dogechain_explorer_testnet: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
-    const prefix = `https://explorer-testnet.dogechain.dog/`
+  Lachain_explorer_testnet: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
+    const prefix = `https://explorer-testnet.Lachain.dog/`
     switch (type) {
       case 'transaction':
         return `${prefix}/tx/${data}`
@@ -30,13 +30,13 @@ interface ChainObject {
 }
 
 const chains: ChainObject = {
-  [ChainId.DOGECHAIN]: {
+  [ChainId.LACHAIN]: {
     chainName: '',
-    builder: builders.dogechain_explorer,
+    builder: builders.Lachain_explorer,
   },
-  [ChainId.DOGECHAIN_TESTNET]: {
+  [ChainId.LACHAIN_TESTNET]: {
     chainName: 'testnet',
-    builder: builders.dogechain_explorer_testnet,
+    builder: builders.Lachain_explorer_testnet,
   },
 }
 

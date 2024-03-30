@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, Dogechain } from '@boneswapfi/sdk'
+import { ChainId, CurrencyAmount, Lachain } from '@mateswapfi/sdk'
 import {
   useUserArcherETHTip,
   useUserArcherGasPrice,
@@ -105,7 +105,7 @@ export default function MinerTip() {
           Miner Tip
         </Typography>
         <Typography variant="sm" className="text-secondary" onClick={toggleSettings}>
-          {CurrencyAmount.fromRawAmount(Dogechain.onChain(ChainId.DOGECHAIN), userETHTip).toFixed(3)} WDOGE
+          {CurrencyAmount.fromRawAmount(Lachain.onChain(ChainId.LACHAIN), userETHTip).toFixed(3)} LAC
         </Typography>
       </div>
       {!userTipManualOverride && (

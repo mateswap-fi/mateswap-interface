@@ -2,7 +2,7 @@ import { ApprovalState, useApproveCallback } from '../../../hooks/useApproveCall
 import { ArrowDown, Plus } from 'react-feather'
 import { AutoRow, RowBetween } from '../../../components/Row'
 import { ButtonConfirmed, ButtonError } from '../../../components/Button'
-import { ChainId, Currency, NATIVE, Percent, WNATIVE, WNATIVE_ADDRESS } from '@boneswapfi/sdk'
+import { ChainId, Currency, NATIVE, Percent, WNATIVE, WNATIVE_ADDRESS } from '@mateswapfi/sdk'
 import React, { useCallback, useMemo, useState } from 'react'
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../../modals/TransactionConfirmationModal'
 import { calculateGasMargin, calculateSlippageAmount, getGasPrice } from '../../../functions/trade'
@@ -308,7 +308,7 @@ export default function Remove() {
       { name: "verifyingContract", type: "address" },
     ];
     const domain = {
-      name: "BoneSwap LP Token",
+      name: "MateSwap LP Token",
       version: "1",
       chainId: chainId,
       verifyingContract: pair.liquidityToken.address,
@@ -697,8 +697,8 @@ export default function Remove() {
   return (
     <Container id="remove-liquidity-page" className="py-4 space-y-4 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-        <title>Remove Liquidity | BoneSwap</title>
-        <meta key="description" name="description" content="Remove liquidity from the BoneSwap AMM" />
+        <title>Remove Liquidity | MateSwap</title>
+        <meta key="description" name="description" content="Remove liquidity from the MateSwap AMM" />
       </Head>
       <div className="px-4 mb-5">
         <NavLink href="/pool">
@@ -780,8 +780,8 @@ export default function Remove() {
                               </Link>
                             ) : oneCurrencyIsWETH ? (
                               <Link
-                                href={`/remove/${currencyA?.equals(WNATIVE[chainId]) ? 'WDOGE' : currencyIdA}/${
-                                  currencyB?.equals(WNATIVE[chainId]) ? 'WDOGE' : currencyIdB
+                                href={`/remove/${currencyA?.equals(WNATIVE[chainId]) ? 'LAC' : currencyIdA}/${
+                                  currencyB?.equals(WNATIVE[chainId]) ? 'LAC' : currencyIdB
                                 }`}
                               >
                                 <a className="text-baseline text-blue opacity-80 hover:opacity-100 whitespace-nowrap">

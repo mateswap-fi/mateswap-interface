@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@boneswapfi/sdk'
+import { Currency, CurrencyAmount, Token } from '@mateswapfi/sdk'
 
 import { BigNumber } from '@ethersproject/bignumber'
 import { useSingleCallResult } from '../state/multicall/hooks'

@@ -1,18 +1,18 @@
 import { bentoUserTokensQuery, kashiPairsQuery, kashiUserPairsQuery } from '../queries/bentobox'
 import { getFraction, toAmount } from '../../../functions'
 
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import { GRAPH_HOST } from '../constants'
 import { getTokenSubset } from './exchange'
 import { pager } from '.'
 
 export const BENTOBOX = {
-  [ChainId.DOGECHAIN]: 'boneswap/bentobox',
+  [ChainId.LACHAIN]: 'mateswap/bentobox',
 }
-export const fetcher = async (chainId = ChainId.DOGECHAIN, query, variables = undefined) =>
+export const fetcher = async (chainId = ChainId.LACHAIN, query, variables = undefined) =>
   pager(`${GRAPH_HOST[chainId]}/subgraphs/name/${BENTOBOX[chainId]}`, query, variables)
 
-export const getKashiPairs = async (chainId = ChainId.DOGECHAIN, variables = undefined) => {
+export const getKashiPairs = async (chainId = ChainId.LACHAIN, variables = undefined) => {
   const { kashiPairs } = await fetcher(chainId, kashiPairsQuery, variables)
 
   const tokens = await getTokenSubset(chainId, {
@@ -52,7 +52,7 @@ export const getKashiPairs = async (chainId = ChainId.DOGECHAIN, variables = und
   }))
 }
 
-export const getUserKashiPairs = async (chainId = ChainId.DOGECHAIN, variables) => {
+export const getUserKashiPairs = async (chainId = ChainId.LACHAIN, variables) => {
   const { userKashiPairs } = await fetcher(chainId, kashiUserPairsQuery, variables)
 
   return userKashiPairs.map((userPair) => ({
@@ -77,7 +77,7 @@ export const getUserKashiPairs = async (chainId = ChainId.DOGECHAIN, variables) 
   }))
 }
 
-export const getBentoUserTokens = async (chainId = ChainId.DOGECHAIN, variables) => {
+export const getBentoUserTokens = async (chainId = ChainId.LACHAIN, variables) => {
   const { userTokens } = await fetcher(chainId, bentoUserTokensQuery, variables)
 
   return userTokens

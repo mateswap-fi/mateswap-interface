@@ -8,7 +8,7 @@ import {
   Trade,
   TradeType,
   currencyEquals,
-} from '@boneswapfi/sdk'
+} from '@mateswapfi/sdk'
 import { ONE_HUNDRED_PERCENT, ZERO_PERCENT } from '../constants'
 
 import { BigNumber } from '@ethersproject/bignumber'
@@ -45,7 +45,7 @@ export function calculateGasMargin(value: BigNumber): BigNumber {
   return value.mul(BigNumber.from(10000 + 2000)).div(BigNumber.from(10000))
 }
 
-// hardcoded for dogechain
+// hardcoded for Lachain
 export function getGasPrice(): BigNumber {
   return BigNumber.from(50000000000)
 }

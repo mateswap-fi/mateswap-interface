@@ -1,4 +1,4 @@
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import { createStore, Store } from 'redux'
 import { addPopup, ApplicationModal, removePopup, setOpenModal, updateBlockNumber } from './actions'
 import reducer, { ApplicationState } from './reducer'
@@ -10,7 +10,7 @@ describe('application reducer', () => {
     store = createStore(reducer, {
       popupList: [],
       blockNumber: {
-        [ChainId.DOGECHAIN]: 3,
+        [ChainId.LACHAIN]: 3,
       },
       openModal: null,
     })
@@ -72,18 +72,18 @@ describe('application reducer', () => {
 
   describe('updateBlockNumber', () => {
     it('updates block number', () => {
-      store.dispatch(updateBlockNumber({ chainId: ChainId.DOGECHAIN, blockNumber: 4 }))
-      expect(store.getState().blockNumber[ChainId.DOGECHAIN]).toEqual(4)
+      store.dispatch(updateBlockNumber({ chainId: ChainId.LACHAIN, blockNumber: 4 }))
+      expect(store.getState().blockNumber[ChainId.LACHAIN]).toEqual(4)
     })
     it('no op if late', () => {
-      store.dispatch(updateBlockNumber({ chainId: ChainId.DOGECHAIN, blockNumber: 2 }))
-      expect(store.getState().blockNumber[ChainId.DOGECHAIN]).toEqual(3)
+      store.dispatch(updateBlockNumber({ chainId: ChainId.LACHAIN, blockNumber: 2 }))
+      expect(store.getState().blockNumber[ChainId.LACHAIN]).toEqual(3)
     })
     it('works with non-set chains', () => {
-      store.dispatch(updateBlockNumber({ chainId: ChainId.DOGECHAIN_TESTNET, blockNumber: 2 }))
+      store.dispatch(updateBlockNumber({ chainId: ChainId.LACHAIN_TESTNET, blockNumber: 2 }))
       expect(store.getState().blockNumber).toEqual({
-        [ChainId.DOGECHAIN]: 3,
-        [ChainId.DOGECHAIN_TESTNET]: 2,
+        [ChainId.LACHAIN]: 3,
+        [ChainId.LACHAIN_TESTNET]: 2,
       })
     })
   })

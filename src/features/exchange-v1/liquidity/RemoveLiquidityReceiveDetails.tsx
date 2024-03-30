@@ -1,4 +1,4 @@
-import { Currency, NATIVE, WNATIVE, currencyEquals } from '@boneswapfi/sdk'
+import { Currency, NATIVE, WNATIVE, currencyEquals } from '@mateswapfi/sdk'
 
 import { AutoColumn } from '../../../components/Column'
 import CurrencyLogo from '../../../components/CurrencyLogo'

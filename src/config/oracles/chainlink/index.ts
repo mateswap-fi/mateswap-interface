@@ -1,4 +1,4 @@
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 
 export type ChainlinkPriceFeedMap = {
   readonly [address: string]: {

@@ -1,6 +1,6 @@
 import { AddressZero } from '@ethersproject/constants'
 import { formatUnits, parseUnits } from '@ethersproject/units'
-import { ChainId, Token, CurrencyAmount, JSBI } from '@boneswapfi/sdk'
+import { ChainId, Token, CurrencyAmount, JSBI } from '@mateswapfi/sdk'
 import { useSushiRollContract } from '../../hooks/useContract'
 import { useLingui } from '@lingui/react'
 import { t } from '@lingui/macro'
@@ -307,7 +307,7 @@ const MigrateButtons = ({ state, exchange }: { state: MigrateState; exchange: st
                 <div className="text-red text-center font-medium">{error.message}</div>
             )}
             <div className="text-xs text-low-emphesis text-center">
-                {`Your ${exchange} ${state.selectedLPToken.tokenA.symbol}/${state.selectedLPToken.tokenB.symbol} liquidity will become BoneSwap ${state.selectedLPToken.tokenA.symbol}/${state.selectedLPToken.tokenB.symbol} liquidity.`}
+                {`Your ${exchange} ${state.selectedLPToken.tokenA.symbol}/${state.selectedLPToken.tokenB.symbol} liquidity will become MateSwap ${state.selectedLPToken.tokenA.symbol}/${state.selectedLPToken.tokenB.symbol} liquidity.`}
             </div>
         </div>
     )
@@ -363,36 +363,36 @@ export default function MigrateV2() {
 
   let exchange
 
-  if (chainId === ChainId.DOGECHAIN) {
+  if (chainId === ChainId.LACHAIN) {
       exchange = 'YodeSwap'
-  } else if (chainId === ChainId.DOGECHAIN_TESTNET) {
+  } else if (chainId === ChainId.LACHAIN_TESTNET) {
       exchange = 'YodeSwap Testnet  '
   }
 
   return (
     <Container id="migrate-page" className="py-4 space-y-6 md:py-8 lg:py-12" maxWidth="2xl">
       <Head>
-          <title key="title">Migrate LP tokens | BoneSwap</title>
+          <title key="title">Migrate LP tokens | MateSwap</title>
           <meta
             key="description"
             name="description"
-            content="Migrate LP tokens to Bone LP tokens"
+            content="Migrate LP tokens to Mate LP tokens"
           />
-          <meta key="twitter:url" name="twitter:url" content="https://boneswap.fi/migrate" />
+          <meta key="twitter:url" name="twitter:url" content="https://mateswap.fi/migrate" />
           <meta key="twitter:title" name="twitter:title" content="MIGRATE LP" />
           <meta
             key="twitter:description"
             name="twitter:description"
-            content="Migrate LP tokens to Bone LP tokens"
+            content="Migrate LP tokens to Mate LP tokens"
           />
-          <meta key="twitter:image" name="twitter:image" content="https://boneswap.fi/xbone-sign.png" />
+          <meta key="twitter:image" name="twitter:image" content="https://mateswap.fi/xmate-sign.png" />
           <meta key="og:title" property="og:title" content="MIGRATE LP" />
-          <meta key="og:url" property="og:url" content="https://boneswap.fi/migrate" />
-          <meta key="og:image" property="og:image" content="https://boneswap.fi/xbone-sign.png" />
+          <meta key="og:url" property="og:url" content="https://mateswap.fi/migrate" />
+          <meta key="og:image" property="og:image" content="https://mateswap.fi/xmate-sign.png" />
           <meta
             key="og:description"
             property="og:description"
-            content="Migrate LP tokens to Bone LP tokens"
+            content="Migrate LP tokens to Mate LP tokens"
           />
       </Head>
 
