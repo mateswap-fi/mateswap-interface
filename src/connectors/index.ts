@@ -18,7 +18,7 @@ export function getNetwork(defaultChainId, urls = RPC) {
 }
 
 export const network = new NetworkConnector({
-  defaultChainId: ChainId.DOGECHAIN,
+  defaultChainId: ChainId.LACHAIN,
   urls: RPC,
 })
 
@@ -40,8 +40,8 @@ export const walletconnect = new WalletConnectConnector({
   bridge: 'https://bridge.walletconnect.org',
   qrcode: true,
   supportedChainIds: [
-    ChainId.DOGECHAIN,
-    ChainId.DOGECHAIN_TESTNET,
+    ChainId.LACHAIN,
+    ChainId.LACHAIN_TESTNET,
   ],
   chainId: network.provider.chainId
 })
@@ -49,25 +49,25 @@ export const walletconnect = new WalletConnectConnector({
 // mainnet only
 export const fortmatic = new FortmaticConnector({
   apiKey: process.env.NEXT_PUBLIC_FORTMATIC_API_KEY ?? '',
-  chainId: ChainId.DOGECHAIN,
+  chainId: ChainId.LACHAIN,
 })
 
 // mainnet only
 export const portis = new PortisConnector({
   dAppId: process.env.NEXT_PUBLIC_PORTIS_ID ?? '',
-  networks: [ChainId.DOGECHAIN],
+  networks: [ChainId.LACHAIN],
 })
 
 // mainnet only
 export const walletlink = new WalletLinkConnector({
-  url: RPC[ChainId.DOGECHAIN],
-  appName: 'BoneSwap',
-  appLogoUrl: 'https://raw.githubusercontent.com/boneswap-fi/art/master/BONE/logo-256x256.png',
+  url: RPC[ChainId.LACHAIN],
+  appName: 'MateSwap',
+  appLogoUrl: 'https://raw.githubusercontent.com/mateswap-fi/art/master/MATE/logo-256x256.png',
 })
 
 // mainnet only
 export const torus = new TorusConnector({
-  chainId: ChainId.DOGECHAIN,
+  chainId: ChainId.LACHAIN,
 })
 
 // binance only

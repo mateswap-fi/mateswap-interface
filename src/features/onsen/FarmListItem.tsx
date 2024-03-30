@@ -80,12 +80,12 @@ const FarmListItem = ({ farm, ...rest }) => {
                   <div className="hidden md:flex items-center space-x-2">
                     {/* <div key="0" className="flex items-center">
                       <Image
-                        src="https://raw.githubusercontent.com/boneswap-fi/assets/master/blockchains/dogechain/assets/0x1336a51a3aE667c3EA50aD7cf9979D134cF32Cf0/logo.png"
+                        src="https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/Lachain/assets/0x1336a51a3aE667c3EA50aD7cf9979D134cF32Cf0/logo.png"
                         width="30px"
                         height="30px"
                         className="rounded-md"
                         layout="fixed"
-                        alt="BONE"
+                        alt="MATE"
                       />
                     </div> */}
 
@@ -106,7 +106,7 @@ const FarmListItem = ({ farm, ...rest }) => {
 
                   {/* <div className="flex flex-col space-y-1">
                     <div key="0" className="text-xs md:text-sm">
-                      {formatNumber(pendingSushi.toFixed(18))} BONE
+                      {formatNumber(pendingSushi.toFixed(18))} MATE
                     </div>
                   </div> */}
 

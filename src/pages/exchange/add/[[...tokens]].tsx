@@ -288,7 +288,7 @@ export default function Add() {
           router.push(`/add/${newCurrencyIdB}`)
         }
       } else {
-        router.push(`/add/${currencyIdA ? currencyIdA : 'WDOGE'}/${newCurrencyIdB}`)
+        router.push(`/add/${currencyIdA ? currencyIdA : 'LAC'}/${newCurrencyIdB}`)
       }
     },
     [currencyIdA, router, currencyIdB]
@@ -312,11 +312,11 @@ export default function Add() {
   return (
     <>
       <Head>
-        <title>Add Liquidity | BoneSwap</title>
+        <title>Add Liquidity | MateSwap</title>
         <meta
           key="description"
           name="description"
-          content="Add liquidity to the BoneSwap AMM to enable gas optimised and low slippage trades across countless networks"
+          content="Add liquidity to the MateSwap AMM to enable gas optimised and low slippage trades across countless networks"
         />
       </Head>
 

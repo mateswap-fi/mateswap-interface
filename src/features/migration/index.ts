@@ -1,3 +1,3 @@
 import { ChainId } from '@mateswapfi/sdk'
 
-export const MigrationSupported = [ChainId.DOGECHAIN, ChainId.DOGECHAIN_TESTNET]
+export const MigrationSupported = [ChainId.LACHAIN, ChainId.LACHAIN_TESTNET]

@@ -72,7 +72,7 @@ export default function Web3ReactManager({ children }: { children: JSX.Element }
   return (
     <>
       {/*
-      //TODO(ILoveBones): check what happended here
+      //TODO(ILoveMates): check what happended here
       <GnosisManagerNoSSR /> */}
       {children}
     </>

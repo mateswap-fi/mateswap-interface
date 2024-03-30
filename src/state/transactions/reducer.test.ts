@@ -15,7 +15,7 @@ describe('transaction reducer', () => {
       const beforeTime = new Date().getTime()
       store.dispatch(
         addTransaction({
-          chainId: ChainId.DOGECHAIN,
+          chainId: ChainId.LACHAIN,
           summary: 'hello world',
           hash: '0x0',
           approval: { tokenAddress: 'abc', spender: 'def' },
@@ -23,9 +23,9 @@ describe('transaction reducer', () => {
         })
       )
       const txs = store.getState()
-      expect(txs[ChainId.DOGECHAIN]).toBeTruthy()
-      expect(txs[ChainId.DOGECHAIN]?.['0x0']).toBeTruthy()
-      const tx = txs[ChainId.DOGECHAIN]?.['0x0']
+      expect(txs[ChainId.LACHAIN]).toBeTruthy()
+      expect(txs[ChainId.LACHAIN]?.['0x0']).toBeTruthy()
+      const tx = txs[ChainId.LACHAIN]?.['0x0']
       expect(tx).toBeTruthy()
       expect(tx?.hash).toEqual('0x0')
       expect(tx?.summary).toEqual('hello world')
@@ -39,7 +39,7 @@ describe('transaction reducer', () => {
     it('no op if not valid transaction', () => {
       store.dispatch(
         finalizeTransaction({
-          chainId: ChainId.DOGECHAIN_TESTNET,
+          chainId: ChainId.LACHAIN_TESTNET,
           hash: '0x0',
           receipt: {
             status: 1,
@@ -59,7 +59,7 @@ describe('transaction reducer', () => {
       store.dispatch(
         addTransaction({
           hash: '0x0',
-          chainId: ChainId.DOGECHAIN_TESTNET,
+          chainId: ChainId.LACHAIN_TESTNET,
           approval: { spender: '0x0', tokenAddress: '0x0' },
           summary: 'hello world',
           from: '0x0',
@@ -68,7 +68,7 @@ describe('transaction reducer', () => {
       const beforeTime = new Date().getTime()
       store.dispatch(
         finalizeTransaction({
-          chainId: ChainId.DOGECHAIN_TESTNET,
+          chainId: ChainId.LACHAIN_TESTNET,
           hash: '0x0',
           receipt: {
             status: 1,
@@ -82,7 +82,7 @@ describe('transaction reducer', () => {
           },
         })
       )
-      const tx = store.getState()[ChainId.DOGECHAIN_TESTNET]?.['0x0']
+      const tx = store.getState()[ChainId.LACHAIN_TESTNET]?.['0x0']
       expect(tx?.summary).toEqual('hello world')
       expect(tx?.confirmedTime).toBeGreaterThanOrEqual(beforeTime)
       expect(tx?.receipt).toEqual({
@@ -102,7 +102,7 @@ describe('transaction reducer', () => {
     it('no op if not valid transaction', () => {
       store.dispatch(
         checkedTransaction({
-          chainId: ChainId.DOGECHAIN_TESTNET,
+          chainId: ChainId.LACHAIN_TESTNET,
           hash: '0x0',
           blockNumber: 1,
         })
@@ -113,7 +113,7 @@ describe('transaction reducer', () => {
       store.dispatch(
         addTransaction({
           hash: '0x0',
-          chainId: ChainId.DOGECHAIN_TESTNET,
+          chainId: ChainId.LACHAIN_TESTNET,
           approval: { spender: '0x0', tokenAddress: '0x0' },
           summary: 'hello world',
           from: '0x0',
@@ -121,19 +121,19 @@ describe('transaction reducer', () => {
       )
       store.dispatch(
         checkedTransaction({
-          chainId: ChainId.DOGECHAIN_TESTNET,
+          chainId: ChainId.LACHAIN_TESTNET,
           hash: '0x0',
           blockNumber: 1,
         })
       )
-      const tx = store.getState()[ChainId.DOGECHAIN_TESTNET]?.['0x0']
+      const tx = store.getState()[ChainId.LACHAIN_TESTNET]?.['0x0']
       expect(tx?.lastCheckedBlockNumber).toEqual(1)
     })
     it('never decreases', () => {
       store.dispatch(
         addTransaction({
           hash: '0x0',
-          chainId: ChainId.DOGECHAIN_TESTNET,
+          chainId: ChainId.LACHAIN_TESTNET,
           approval: { spender: '0x0', tokenAddress: '0x0' },
           summary: 'hello world',
           from: '0x0',
@@ -141,19 +141,19 @@ describe('transaction reducer', () => {
       )
       store.dispatch(
         checkedTransaction({
-          chainId: ChainId.DOGECHAIN_TESTNET,
+          chainId: ChainId.LACHAIN_TESTNET,
           hash: '0x0',
           blockNumber: 3,
         })
       )
       store.dispatch(
         checkedTransaction({
-          chainId: ChainId.DOGECHAIN_TESTNET,
+          chainId: ChainId.LACHAIN_TESTNET,
           hash: '0x0',
           blockNumber: 1,
         })
       )
-      const tx = store.getState()[ChainId.DOGECHAIN_TESTNET]?.['0x0']
+      const tx = store.getState()[ChainId.LACHAIN_TESTNET]?.['0x0']
       expect(tx?.lastCheckedBlockNumber).toEqual(3)
     })
   })
@@ -162,7 +162,7 @@ describe('transaction reducer', () => {
     it('removes all transactions for the chain', () => {
       store.dispatch(
         addTransaction({
-          chainId: ChainId.DOGECHAIN,
+          chainId: ChainId.LACHAIN,
           summary: 'hello world',
           hash: '0x0',
           approval: { tokenAddress: 'abc', spender: 'def' },
@@ -171,7 +171,7 @@ describe('transaction reducer', () => {
       )
       store.dispatch(
         addTransaction({
-          chainId: ChainId.DOGECHAIN_TESTNET,
+          chainId: ChainId.LACHAIN_TESTNET,
           summary: 'hello world',
           hash: '0x1',
           approval: { tokenAddress: 'abc', spender: 'def' },
@@ -179,14 +179,14 @@ describe('transaction reducer', () => {
         })
       )
       expect(Object.keys(store.getState())).toHaveLength(2)
-      expect(Object.keys(store.getState())).toEqual([String(ChainId.DOGECHAIN), String(ChainId.DOGECHAIN_TESTNET)])
-      expect(Object.keys(store.getState()[ChainId.DOGECHAIN] ?? {})).toEqual(['0x0'])
-      expect(Object.keys(store.getState()[ChainId.DOGECHAIN_TESTNET] ?? {})).toEqual(['0x1'])
-      store.dispatch(clearAllTransactions({ chainId: ChainId.DOGECHAIN }))
+      expect(Object.keys(store.getState())).toEqual([String(ChainId.LACHAIN), String(ChainId.LACHAIN_TESTNET)])
+      expect(Object.keys(store.getState()[ChainId.LACHAIN] ?? {})).toEqual(['0x0'])
+      expect(Object.keys(store.getState()[ChainId.LACHAIN_TESTNET] ?? {})).toEqual(['0x1'])
+      store.dispatch(clearAllTransactions({ chainId: ChainId.LACHAIN }))
       expect(Object.keys(store.getState())).toHaveLength(2)
-      expect(Object.keys(store.getState())).toEqual([String(ChainId.DOGECHAIN), String(ChainId.DOGECHAIN_TESTNET)])
-      expect(Object.keys(store.getState()[ChainId.DOGECHAIN] ?? {})).toEqual([])
-      expect(Object.keys(store.getState()[ChainId.DOGECHAIN_TESTNET] ?? {})).toEqual(['0x1'])
+      expect(Object.keys(store.getState())).toEqual([String(ChainId.LACHAIN), String(ChainId.LACHAIN_TESTNET)])
+      expect(Object.keys(store.getState()[ChainId.LACHAIN] ?? {})).toEqual([])
+      expect(Object.keys(store.getState()[ChainId.LACHAIN_TESTNET] ?? {})).toEqual(['0x1'])
     })
   })
 })

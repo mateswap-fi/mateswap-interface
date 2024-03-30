@@ -11,23 +11,23 @@ import { useLingui } from '@lingui/react'
 const items = (i18n: I18n) => [
   // {
   //   name: i18n._(t`Docs`),
-  //   description: i18n._(t`Documentation for users of BONE.`),
-  //   href: 'https://docs.boneswap.fi',
+  //   description: i18n._(t`Documentation for users of MATE.`),
+  //   href: 'https://docs.mateswap.fi',
   // },
   // {
   //   name: i18n._(t`Open Source`),
-  //   description: i18n._(t`BONE is a supporter of Open Source.`),
-  //   href: 'https://github.com/boneswap-fi',
+  //   description: i18n._(t`MATE is a supporter of Open Source.`),
+  //   href: 'https://github.com/mateswap-fi',
   // },
   {
     name: i18n._(t`Telegram`),
     description: i18n._(t`Join the community on Telegram.`),
-    href: 'https://t.me/BoneSwap',
+    href: 'https://t.me/MateSwap',
   },
   {
     name: i18n._(t`Twitter`),
     description: i18n._(t`Follow us on Twitter.`),
-    href: 'https://twitter.com/BoneSwapDoge',
+    href: 'https://twitter.com/MateSwapLac',
   },
 ]
 

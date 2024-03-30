@@ -6,13 +6,13 @@ import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 import useHttpLocations from '../../hooks/useHttpLocations'
 
 const BLOCKCHAIN = {
-  [ChainId.DOGECHAIN]: 'dogechain',
-  [ChainId.DOGECHAIN_TESTNET]: 'dogechain-testnet',
+  [ChainId.LACHAIN]: 'Lachain',
+  [ChainId.LACHAIN_TESTNET]: 'Lachain-testnet',
 }
 
 function getCurrencySymbol(currency) {
-  if (currency.symbol === 'WWDOGE') {
-    return 'doge'
+  if (currency.symbol === 'WLAC') {
+    return 'lac'
   }
   return currency.symbol.toLowerCase()
 }
@@ -20,10 +20,10 @@ function getCurrencySymbol(currency) {
 export function getCurrencyLogoUrls(currency) {
   const urls = []
 
-  urls.push(`https://raw.githubusercontent.com/boneswap-fi/icons/master/token/${getCurrencySymbol(currency)}.png`)
+  urls.push(`https://raw.githubusercontent.com/mateswap-fi/icons/master/token/${getCurrencySymbol(currency)}.png`)
   if (currency.chainId in BLOCKCHAIN) {
     urls.push(
-      `https://raw.githubusercontent.com/boneswap-fi/assets/master/blockchains/${BLOCKCHAIN[currency.chainId]}/assets/${
+      `https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/${BLOCKCHAIN[currency.chainId]}/assets/${
         currency.address
       }/logo.png`
     )
@@ -37,11 +37,11 @@ export function getCurrencyLogoUrls(currency) {
   return urls
 }
 
-const DogeLogo = 'https://raw.githubusercontent.com/boneswap-fi/icons/master/token/doge.png'
+const LacLogo = 'https://raw.githubusercontent.com/mateswap-fi/icons/master/token/lac.png'
 
 const LOGO: { readonly [chainId in ChainId]?: string } = {
-  [ChainId.DOGECHAIN]: DogeLogo,
-  [ChainId.DOGECHAIN_TESTNET]: DogeLogo,
+  [ChainId.LACHAIN]: LacLogo,
+  [ChainId.LACHAIN_TESTNET]: LacLogo,
 }
 
 interface CurrencyLogoProps {
@@ -52,7 +52,7 @@ interface CurrencyLogoProps {
   squared?: boolean
 }
 
-const unknown = 'https://raw.githubusercontent.com/boneswap-fi/icons/master/token/unknown.png'
+const unknown = 'https://raw.githubusercontent.com/mateswap-fi/icons/master/token/unknown.png'
 
 const CurrencyLogo: FunctionComponent<CurrencyLogoProps> = ({
   currency,

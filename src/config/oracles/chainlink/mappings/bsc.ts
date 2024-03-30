@@ -286,7 +286,7 @@ const BSC_CHAINLINK_MAPPING = {
   //     fromDecimals: 18,
   //     toDecimals: 8
   // }
-  // doge-usd
+  // lac-usd
   '0x3AB0A0d137D4F946fBB19eecc6e92E64660231C8': {
     from: '0xba2ae424d960c26247dd6c32edc70b295c744c43',
     to: '0x0000000000000000000000000000000000000001',

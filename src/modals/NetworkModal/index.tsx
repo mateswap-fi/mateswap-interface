@@ -25,27 +25,27 @@ export const SUPPORTED_NETWORKS: {
     blockExplorerUrls: string[]
   }
 } = {
-  [ChainId.DOGECHAIN]: {
+  [ChainId.LACHAIN]: {
     chainId: '0x7D0',
-    chainName: 'Dogechain',
+    chainName: 'Lachain',
     nativeCurrency: {
-      name: 'Doge',
-      symbol: 'WDOGE',
+      name: 'Lac',
+      symbol: 'LAC',
       decimals: 18,
     },
-    rpcUrls: ['https://rpc01-sg.dogechain.dog'],
-    blockExplorerUrls: ['https://explorer.dogechain.dog/'],
+    rpcUrls: ['https://rpc01-sg.Lachain.dog'],
+    blockExplorerUrls: ['https://explorer.Lachain.dog/'],
   },
-  [ChainId.DOGECHAIN_TESTNET]: {
+  [ChainId.LACHAIN_TESTNET]: {
     chainId: '0x238',
-    chainName: 'Dogechain Testnet',
+    chainName: 'Lachain Testnet',
     nativeCurrency: {
-      name: 'Doge',
-      symbol: 'WDOGE',
+      name: 'Lac',
+      symbol: 'LAC',
       decimals: 18,
     },
-    rpcUrls: ['https://rpc-testnet.dogechain.dog'],
-    blockExplorerUrls: ['https://explorer-testnet.dogechain.dog/'],
+    rpcUrls: ['https://rpc-testnet.Lachain.dog'],
+    blockExplorerUrls: ['https://explorer-testnet.Lachain.dog/'],
   },
 }
 
@@ -61,12 +61,12 @@ export default function NetworkModal(): JSX.Element | null {
     <Modal isOpen={networkModalOpen} onDismiss={toggleNetworkModal} maxWidth={672}>
       <ModalHeader onClose={toggleNetworkModal} title={i18n._(t`Select a Network`)} />
       <div className="mb-6 text-lg text-primary">
-        You are currently browsing <span className="font-bold text-pink">BONE</span>
+        You are currently browsing <span className="font-bold text-pink">MATE</span>
         <br /> on the <span className="font-bold text-blue">{NETWORK_LABEL[chainId]}</span> network
       </div>
 
       <div className="grid grid-flow-row-dense grid-cols-1 gap-5 overflow-y-auto md:grid-cols-2">
-        {[ChainId.DOGECHAIN].map((key: ChainId, i: number) => {
+        {[ChainId.LACHAIN].map((key: ChainId, i: number) => {
           return (
             <button
               key={i}
@@ -74,7 +74,7 @@ export default function NetworkModal(): JSX.Element | null {
                 toggleNetworkModal()
                 const params = SUPPORTED_NETWORKS[key]
                 cookie.set('chainId', key)
-                if (key === ChainId.DOGECHAIN) {
+                if (key === ChainId.LACHAIN) {
                   library?.send('wallet_switchEthereumChain', [{ chainId: params.chainId }, account])
                 } else {
                   library?.send('wallet_addEthereumChain', [params, account])

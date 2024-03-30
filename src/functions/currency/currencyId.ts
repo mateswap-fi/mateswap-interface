@@ -1,7 +1,7 @@
 import { ChainId, Currency } from '@mateswapfi/sdk'
 
 export function currencyId(currency: Currency): string {
-  if (currency.isNative) return 'WDOGE'
+  if (currency.isNative) return 'LAC'
 
   if (currency.isToken) return currency.address
   throw new Error('invalid currency')

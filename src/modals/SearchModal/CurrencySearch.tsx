@@ -107,7 +107,7 @@ export function CurrencySearch({
   const filteredSortedTokensWithETH: Currency[] = useMemo(() => {
     const s = debouncedQuery.toLowerCase().trim()
 
-    if (s === '' || s === 'w' || s === 'wd' || s === 'wdo' || s === 'wdog' || s === 'wdoge') {
+    if (s === '' || s === 'w' || s === 'wd' || s === 'wdo' || s === 'wdog' || s === 'wlac') {
       console.log("**s** INSIDE IF 2");
       return ether ? [ether, ...filteredSortedTokens] : filteredSortedTokens
     }
@@ -141,7 +141,7 @@ export function CurrencySearch({
       if (e.key === 'Enter') {
         const s = debouncedQuery.toLowerCase().trim()
         console.log("**s** 2:", s);
-        if (s === 'wdoge' && ether) {
+        if (s === 'wlac' && ether) {
           handleCurrencySelect(ether)
         } else if (filteredSortedTokensWithETH.length > 0) {
           if (

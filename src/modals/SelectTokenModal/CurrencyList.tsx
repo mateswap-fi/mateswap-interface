@@ -111,7 +111,7 @@ function CurrencyRow({
   const { account, chainId, library, activate } = useWeb3React()
   const key = currencyKey(currency)
   const useMultichainCurrencyBalance = (chainId, account, currency) => {
-    if (chainId === ChainId.DOGECHAIN) {
+    if (chainId === ChainId.LACHAIN) {
       return useCurrencyBalance(account, currency)
     }
     return CurrencyAmount.fromRawAmount(currency, 0)

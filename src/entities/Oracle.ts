@@ -20,7 +20,7 @@ export abstract class AbstractOracle implements Oracle {
   data = ''
   warning = ''
   error = ''
-  chainId = ChainId.DOGECHAIN
+  chainId = ChainId.LACHAIN
   pair: any
   tokens: Token[]
   valid = false
@@ -37,14 +37,14 @@ export abstract class AbstractOracle implements Oracle {
 export class SushiSwapTWAP0Oracle extends AbstractOracle {
   constructor(pair, chainId: ChainId, tokens?: Token[]) {
     super(pair, chainId, tokens)
-    this.name = 'BoneSwap'
+    this.name = 'MateSwap'
   }
 }
 
 export class SushiSwapTWAP1Oracle extends AbstractOracle {
   constructor(pair, chainId: ChainId, tokens?: Token[]) {
     super(pair, chainId, tokens)
-    this.name = 'BoneSwap'
+    this.name = 'MateSwap'
   }
 }
 

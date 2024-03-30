@@ -1,8 +1,8 @@
 import { ChainId } from '@mateswapfi/sdk'
 
 const RPC = {
-  [ChainId.DOGECHAIN]: 'https://rpc01-sg.dogechain.dog',
-  [ChainId.DOGECHAIN_TESTNET]: 'https://rpc-testnet.dogechain.dog',
+  [ChainId.LACHAIN]: 'https://rpc01-sg.Lachain.dog',
+  [ChainId.LACHAIN_TESTNET]: 'https://rpc-testnet.Lachain.dog',
 }
 
 export default RPC

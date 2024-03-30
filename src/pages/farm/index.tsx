@@ -12,8 +12,8 @@ import {
 } from '../../services/graph'
 
 import { BigNumber } from '@ethersproject/bignumber'
-import { ChainId, WNATIVE, Token, CurrencyAmount, JSBI, WWDOGE, MASTERCHEF_ADDRESS, MASTERCHEF_V2_ADDRESS } from '@mateswapfi/sdk'
-import { BONE, USDT, USDC } from '../../config/tokens'
+import { ChainId, WNATIVE, Token, CurrencyAmount, JSBI, WLAC, MASTERCHEF_ADDRESS, MASTERCHEF_V2_ADDRESS } from '@mateswapfi/sdk'
+import { MATE, UXD } from '../../config/tokens'
 import Container from '../../components/Container'
 import FarmList from '../../features/onsen/FarmList'
 import Head from 'next/head'
@@ -46,7 +46,7 @@ function getTokensSorted(pool, pair) {
   return [undefined, undefined, undefined, undefined];
 }
 
-function getTokenPriceInDoge(pool, pair, chainId, bonePriceDoge, dogePriceUSD) {
+function getTokenPriceInLac(pool, pair, chainId, matePriceLac, lacPriceUSD) {
   let [token0, token1, reserve0, reserve1] = getTokensSorted(pool, pair);
 
   if (! token0) return 0;
@@ -55,19 +55,19 @@ function getTokenPriceInDoge(pool, pair, chainId, bonePriceDoge, dogePriceUSD) {
   let tokenAmount0 = Number.parseFloat(CurrencyAmount.fromRawAmount(token0, JSBI.BigInt(reserve0.toString())).toFixed());
   let tokenAmount1 = Number.parseFloat(CurrencyAmount.fromRawAmount(token1, JSBI.BigInt(reserve1.toString())).toFixed());
 
-  if (token0.address === BONE[chainId].address) {
-    factor = bonePriceDoge;
-  } else if (token1.address === BONE[chainId].address) {
+  if (token0.address === MATE[chainId].address) {
+    factor = matePriceLac;
+  } else if (token1.address === MATE[chainId].address) {
     [tokenAmount1, tokenAmount0] = [tokenAmount0, tokenAmount1];
-    factor = bonePriceDoge;
-  } else if (token0.address === USDT[chainId].address) {
-    factor = dogePriceUSD;
-  } else if (token1.address === USDT[chainId].address) {
+    factor = matePriceLac;
+  } else if (token0.address === UXD[chainId].address) {
+    factor = lacPriceUSD;
+  } else if (token1.address === UXD[chainId].address) {
     [tokenAmount1, tokenAmount0] = [tokenAmount0, tokenAmount1];
-    factor = dogePriceUSD;
-  } else if (token0.address === WWDOGE[chainId].address) {
+    factor = lacPriceUSD;
+  } else if (token0.address === WLAC[chainId].address) {
     factor = 1;
-  } else if (token1.address === WWDOGE[chainId].address) {
+  } else if (token1.address === WLAC[chainId].address) {
     [tokenAmount1, tokenAmount0] = [tokenAmount0, tokenAmount1];
     factor = 1;
   }
@@ -81,7 +81,7 @@ export default function Farm(): JSX.Element {
   const router = useRouter()
 
   // Note: take the price from an external resource
-  // const [bonePriceUSD, setBonePriceUSD] = useState(0);
+  // const [matePriceUSD, setMatePriceUSD] = useState(0);
 
   const type = router.query.filter as string
 
@@ -95,64 +95,34 @@ export default function Farm(): JSX.Element {
   updateFarmFilter(type)
 
   const hardcodedPairs = {
-    [ChainId.DOGECHAIN]: {
+    [ChainId.LACHAIN]: {
       "0xcAd6a9C7912f182427a0Cb9DDE41Fc550F24a4Ef": {
         farmId: 0,
         allocPoint: 5000,
-        token0: WWDOGE[ChainId.DOGECHAIN],
-        token1: USDT[ChainId.DOGECHAIN],
+        token0: WLAC[ChainId.LACHAIN],
+        token1: UXD[ChainId.LACHAIN],
       },
       "0x2934004Ced6114dF564D9190c147E7eA38F235f9": {
         farmId: 1,
         allocPoint: 60000,
-        token0: BONE[ChainId.DOGECHAIN],
-        token1: WWDOGE[ChainId.DOGECHAIN],
+        token0: MATE[ChainId.LACHAIN],
+        token1: WLAC[ChainId.LACHAIN],
       },
       "0x8d26D58cdaf04fd9EAB2f00A353Ea4CAF74aa35e": {
         farmId: 2,
         allocPoint: 9000,
-        token0: BONE[ChainId.DOGECHAIN],
-        token1: USDT[ChainId.DOGECHAIN],
-      },
-      "0x49a8fEf359F6D45eb7684CA9000Ab274943870d2": {
-        farmId: 3,
-        allocPoint: 8000,
-        token0: BONE[ChainId.DOGECHAIN],
-        token1: USDC[ChainId.DOGECHAIN],
-      },
-      "0x1A23295048B4eF4a31ddCd9cE4D539A76fD99e2F": {
-        farmId: 4,
-        allocPoint: 6000,
-        token0: BONE[ChainId.DOGECHAIN],
-        token1: new Token(ChainId.DOGECHAIN, '0xB44a9B6905aF7c801311e8F4E76932ee959c663C', 18, 'ETH', 'ETH Token'),
-      },
-      "0x0baDdE7ea326fdDD181B6a30FC0e68D2D2d0cD9D": {
-        farmId: 5,
-        allocPoint: 5000,
-        token0: BONE[ChainId.DOGECHAIN],
-        token1: new Token(ChainId.DOGECHAIN, '0xfA9343C3897324496A05fC75abeD6bAC29f8A40f', 8, 'WBTC', 'WBTC Token'),
-      },
-      "0x445509a7F7Cc3342AE1511410e3c30Acb55F9891": {
-        farmId: 6,
-        allocPoint: 5000,
-        token0: WWDOGE[ChainId.DOGECHAIN],
-        token1: USDC[ChainId.DOGECHAIN],
-      },
-      "0x69632E44Cb6EEB099B37636D5e4DDD1378d419e2": {
-        farmId: 7,
-        allocPoint: 2000,
-        token0: USDT[ChainId.DOGECHAIN],
-        token1: USDC[ChainId.DOGECHAIN],
+        token0: MATE[ChainId.LACHAIN],
+        token1: UXD[ChainId.LACHAIN],
       },
     },
-    [ChainId.DOGECHAIN_TESTNET]: {
+    [ChainId.LACHAIN_TESTNET]: {
     }
   };
 
   // const hardcodedPairs2x = {
-  //   [ChainId.DOGECHAIN]: {
+  //   [ChainId.LACHAIN]: {
   //   },
-  //   [ChainId.DOGECHAIN_TESTNET]: {
+  //   [ChainId.LACHAIN_TESTNET]: {
   //   }
   // };
 
@@ -207,32 +177,32 @@ export default function Farm(): JSX.Element {
   }
 
   // console.log(farms);
-  const dogeUSDTPool = farms[0].pool;
-  const dogeBonePool = farms[1].pool;
-  const USDTBonePool = farms[2].pool;
-  let dogePriceUSD = 0;
-  let bonePriceDoge = 0;
-  let bonePriceUSD = 0;
+  const lacUXDPool = farms[0].pool;
+  const lacMatePool = farms[1].pool;
+  const UXDMatePool = farms[2].pool;
+  let lacPriceUSD = 0;
+  let matePriceLac = 0;
+  let matePriceUSD = 0;
 
-  // bonePriceUSD
-  // axios.get('https://api.coingecko.com/api/v3/simple/price?ids=boneswap&vs_currencies=usd')
+  // matePriceUSD
+  // axios.get('https://api.coingecko.com/api/v3/simple/price?ids=mateswap&vs_currencies=usd')
   // .then(response => {
-  //   return setBonePriceUSD(response.data.boneswap.usd)
+  //   return setMatePriceUSD(response.data.mateswap.usd)
   // })
 
-  if (dogeUSDTPool.reserves) {
-    dogePriceUSD = Number.parseFloat(dogeUSDTPool.reserves[1].toFixed(6)) / Number.parseFloat(dogeUSDTPool.reserves[0].toFixed(18));
+  if (lacUXDPool.reserves) {
+    lacPriceUSD = Number.parseFloat(lacUXDPool.reserves[1].toFixed(6)) / Number.parseFloat(lacUXDPool.reserves[0].toFixed(18));
   }
-  if (USDTBonePool.reserves) {
-    bonePriceUSD = 1. / ( Number.parseFloat(USDTBonePool.reserves[0].toFixed(18)) / Number.parseFloat(USDTBonePool.reserves[1].toFixed(6)))
+  if (UXDMatePool.reserves) {
+    matePriceUSD = 1. / ( Number.parseFloat(UXDMatePool.reserves[0].toFixed(18)) / Number.parseFloat(UXDMatePool.reserves[1].toFixed(6)))
   }
-  if (dogeBonePool.reserves) {
-    bonePriceDoge = Number.parseFloat(dogeBonePool.reserves[1].toFixed(18)) / Number.parseFloat(dogeBonePool.reserves[0].toFixed(18))
+  if (lacMatePool.reserves) {
+    matePriceLac = Number.parseFloat(lacMatePool.reserves[1].toFixed(18)) / Number.parseFloat(lacMatePool.reserves[0].toFixed(18))
   }
 
-  // console.log("dogePriceUSD:  ", dogePriceUSD);
-  // console.log("bonePriceUSD:  ", bonePriceUSD);
-  // console.log("bonePriceDoge: ", bonePriceDoge);
+  // console.log("lacPriceUSD:  ", lacPriceUSD);
+  // console.log("matePriceUSD:  ", matePriceUSD);
+  // console.log("matePriceLac: ", matePriceLac);
 
   // for (const [pairAddress, pair] of Object.entries(hardcodedPairs2x[chainId])) {
   //   swapPairs.push({
@@ -282,7 +252,7 @@ export default function Farm(): JSX.Element {
   //     rewardToken: {
   //       ...pair.rewardToken,
   //       // eslint-disable-next-line react-hooks/rules-of-hooks
-  //       derivedETH: getTokenPriceInDoge(usePool(pairAddress), pair, chainId, bonePriceDoge, dogePriceUSD),
+  //       derivedETH: getTokenPriceInLac(usePool(pairAddress), pair, chainId, matePriceLac, lacPriceUSD),
   //     },
 
   //     userCount: 1,
@@ -316,46 +286,35 @@ export default function Farm(): JSX.Element {
         }
 
         let tvl = 0;
-        if (farms[i].pool.token0 === BONE[chainId].address) {
+        if (farms[i].pool.token0 === MATE[chainId].address) {
           const reserve = Number.parseFloat(farms[i].pool.reserves[0].toFixed(18));
-          // tvl = reserve / totalSupply * chefBalance * bonePriceUSD * 2;
-          tvl = reserve * bonePriceUSD * 2;
+          // tvl = reserve / totalSupply * chefBalance * matePriceUSD * 2;
+          tvl = reserve * matePriceUSD * 2;
         }
-        else if (farms[i].pool.token1 === BONE[chainId].address) {
+        else if (farms[i].pool.token1 === MATE[chainId].address) {
           const reserve = Number.parseFloat(farms[i].pool.reserves[1].toFixed(18));
-          // tvl = reserve / totalSupply * chefBalance * bonePriceUSD * 2;
-          tvl = reserve * bonePriceUSD * 2;
+          // tvl = reserve / totalSupply * chefBalance * matePriceUSD * 2;
+          tvl = reserve * matePriceUSD * 2;
         }
-        else if (farms[i].pool.token0 === USDT[chainId].address) {
+        else if (farms[i].pool.token0 === UXD[chainId].address) {
           const reserve = Number.parseFloat(farms[i].pool.reserves[0].toFixed(6));
           // tvl = reserve / totalSupply * chefBalance * 2;
           tvl = reserve * 2;
         }
-        else if (farms[i].pool.token1 === USDT[chainId].address) {
+        else if (farms[i].pool.token1 === UXD[chainId].address) {
           const reserve = Number.parseFloat(farms[i].pool.reserves[1].toFixed(6));
           // tvl = reserve / (totalSupply * chefBalance * 2);
           tvl = reserve * 2;
         }
-        else if (farms[i].pool.token0 === USDC[chainId].address) {
-          const reserve = Number.parseFloat(farms[i].pool.reserves[0].toFixed(6));
-          console.log("case 5 - reserve: ", reserve)
-          // tvl = reserve / totalSupply * chefBalance * 2;
-          tvl = reserve * 2;
-        }
-        else if (farms[i].pool.token1 === USDC[chainId].address) {
-          const reserve = Number.parseFloat(farms[i].pool.reserves[1].toFixed(6));
-          // tvl = reserve / totalSupply * chefBalance * 2;
-          tvl = reserve * 2;
-        }
-        else if (farms[i].pool.token0 === WWDOGE[chainId].address) {
+        else if (farms[i].pool.token0 === WLAC[chainId].address) {
           const reserve = Number.parseFloat(farms[i].pool.reserves[0].toFixed(18));
-          // tvl = reserve / totalSupply * chefBalance * dogePriceUSD * 2;
-          tvl = reserve * dogePriceUSD * 2;
+          // tvl = reserve / totalSupply * chefBalance * lacPriceUSD * 2;
+          tvl = reserve * lacPriceUSD * 2;
         }
-        else if (farms[i].pool.token1 === WWDOGE[chainId].address) {
+        else if (farms[i].pool.token1 === WLAC[chainId].address) {
           const reserve = Number.parseFloat(farms[i].pool.reserves[1].toFixed(18));
-          // tvl = reserve / totalSupply * chefBalance * dogePriceUSD * 2;
-          tvl = reserve * dogePriceUSD * 2;
+          // tvl = reserve / totalSupply * chefBalance * lacPriceUSD * 2;
+          tvl = reserve * lacPriceUSD * 2;
         }
         farms[i].tvl = tvl;
         farms[i].chefBalance = chefBalance;
@@ -385,20 +344,20 @@ export default function Farm(): JSX.Element {
   //       console.log("chefBalance: ", chefBalance.toString())
 
   //       let tvl = 0;
-  //       if (farms[i].pool.token0 === BONE[chainId].address) {
+  //       if (farms[i].pool.token0 === MATE[chainId].address) {
   //         const reserve = farms[i].pool.reserves[0];
   //         console.log("case 1 - reserve: ", reserve)
   //         // console.log(`case 1 - farms[${i}]: `, farms[i])
-  //         tvl = reserve.div(totalSupply.mul(chefBalance).mul(bonePriceUSD).mul(2));
+  //         tvl = reserve.div(totalSupply.mul(chefBalance).mul(matePriceUSD).mul(2));
   //       }
-  //       else if (farms[i].pool.token1 === BONE[chainId].address) {
+  //       else if (farms[i].pool.token1 === MATE[chainId].address) {
   //         const reserve = farms[i].pool.reserves[1];
   //         console.log("case 2 - reserve: ", reserve)
   //         // console.log(`case 2 - farms[${i}]: `, farms[i])
-  //         // tvl = reserve / totalSupply * chefBalance * bonePriceUSD * 2;
-  //         tvl = reserve.div(totalSupply.mul(chefBalance).mul(bonePriceUSD).mul(2));
+  //         // tvl = reserve / totalSupply * chefBalance * matePriceUSD * 2;
+  //         tvl = reserve.div(totalSupply.mul(chefBalance).mul(matePriceUSD).mul(2));
   //       }
-  //       else if (farms[i].pool.token0 === USDT[chainId].address) {
+  //       else if (farms[i].pool.token0 === UXD[chainId].address) {
   //         const reserve = farms[i].pool.reserves[0];
   //         console.log("case 3 - reserve: ", reserve)
   //         // console.log(`case 3 - farms[${i}]: `, farms[i])
@@ -406,7 +365,7 @@ export default function Farm(): JSX.Element {
   //         // tvl = reserve / totalSupply * chefBalance * 2;
   //         tvl = reserve.div(totalSupply.mul(chefBalance).mul(2));
   //       }
-  //       else if (farms[i].pool.token1 === USDT[chainId].address) {
+  //       else if (farms[i].pool.token1 === UXD[chainId].address) {
   //         const reserve = farms[i].pool.reserves[1];
   //         console.log("case 4 - reserve: ", reserve)
   //         console.log(`case 4 - farms[${i}]: `, farms[i])
@@ -427,20 +386,20 @@ export default function Farm(): JSX.Element {
   //         // tvl = reserve / totalSupply * chefBalance * 2;
   //         tvl = reserve.div(totalSupply.mul(chefBalance).mul(2));
   //       }
-  //       else if (farms[i].pool.token0 === WWDOGE[chainId].address) {
+  //       else if (farms[i].pool.token0 === WLAC[chainId].address) {
   //         const reserve = farms[i].pool.reserves[0];
   //         console.log("case 7 - reserve: ", reserve)
   //         // console.log(`case 7 - farms[${i}]: `, farms[i])
-  //         // tvl = reserve / totalSupply * chefBalance * dogePriceUSD * 2;
-  //         tvl = reserve.div(totalSupply.mul(chefBalance).mul(dogePriceUSD).mul(2));
+  //         // tvl = reserve / totalSupply * chefBalance * lacPriceUSD * 2;
+  //         tvl = reserve.div(totalSupply.mul(chefBalance).mul(lacPriceUSD).mul(2));
 
   //       }
-  //       else if (farms[i].pool.token1 === WWDOGE[chainId].address) {
+  //       else if (farms[i].pool.token1 === WLAC[chainId].address) {
   //         const reserve = farms[i].pool.reserves[1];
   //         console.log("case 8 - reserve: ", reserve)
   //         // console.log(`case 8 - farms[${i}]: `, farms[i])
-  //         // tvl = reserve / totalSupply * chefBalance * dogePriceUSD * 2;
-  //         tvl = reserve.div(totalSupply.mul(chefBalance).mul(dogePriceUSD).mul(2));
+  //         // tvl = reserve / totalSupply * chefBalance * lacPriceUSD * 2;
+  //         tvl = reserve.div(totalSupply.mul(chefBalance).mul(lacPriceUSD).mul(2));
   //       } else {
   //         console.log("opaaaa 2222 !!!!!!")
   //       }
@@ -494,11 +453,11 @@ export default function Farm(): JSX.Element {
       const rewardPerBlock = (pool.allocPoint / pool.owner.totalAllocPoint) * sushiPerBlock
 
       const defaultReward = {
-        token: 'BONE',
-        icon: 'https://raw.githubusercontent.com/boneswap-fi/assets/master/blockchains/dogechain/assets/0x1336a51a3aE667c3EA50aD7cf9979D134cF32Cf0/logo.png',
+        token: 'MATE',
+        icon: 'https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/Lachain/assets/0x1336a51a3aE667c3EA50aD7cf9979D134cF32Cf0/logo.png',
         rewardPerBlock,
         rewardPerDay: rewardPerBlock * blocksPerDay,
-        rewardPrice: +bonePriceUSD,
+        rewardPrice: +matePriceUSD,
       }
 
       let rewards = [defaultReward]
@@ -507,7 +466,7 @@ export default function Farm(): JSX.Element {
       //   // override for mcv2...
       //   pool.owner.totalAllocPoint = masterChefV1TotalAllocPoint
 
-      //   const icon = `https://raw.githubusercontent.com/boneswap-fi/assets/master/blockchains/dogechain/assets/${getAddress(
+      //   const icon = `https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/Lachain/assets/${getAddress(
       //     pool.rewarder.rewardToken
       //   )}/logo.png`
 
@@ -526,7 +485,7 @@ export default function Farm(): JSX.Element {
       //     // console.log("rewardPerBlock:      ", rewardPerBlock);
 
       //     const rewardPerDay = (pool.rewarder.rewardPerSecond / decimals) * averageBlockTime * blocksPerDay
-      //     const rewardPrice = pool.rewardToken.derivedETH * dogePriceUSD
+      //     const rewardPrice = pool.rewardToken.derivedETH * lacPriceUSD
 
       //     // console.log("rewardPrice:      ", rewardPrice);
 
@@ -611,8 +570,8 @@ export default function Farm(): JSX.Element {
   return (
     <Container id="farm-page" className="lg:grid lg:grid-cols-4 h-full py-4 mx-auto md:py-8 lg:py-12 gap-9" maxWidth="7xl">
       <Head>
-        <title>Farm | BoneSwap</title>
-        <meta key="description" name="description" content="Farm BONE" />
+        <title>Farm | MateSwap</title>
+        <meta key="description" name="description" content="Farm MATE" />
       </Head>
       <div className={classNames('px-3 md:px-0 lg:block md:col-span-1')}>
         <Menu positionsLength={positions.length} />

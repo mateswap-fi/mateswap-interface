@@ -290,7 +290,7 @@ export default function WalletStandalone({
           <HeaderRow>{error instanceof UnsupportedChainIdError ? 'Wrong Network' : 'Error connecting'}</HeaderRow>
           <ContentWrapper>
             {error instanceof UnsupportedChainIdError ? (
-              <h5>Please connect to the appropriate Dogechain network.</h5>
+              <h5>Please connect to the appropriate Lachain network.</h5>
             ) : (
               'Error connecting. Try refreshing the page.'
             )}
@@ -324,7 +324,7 @@ export default function WalletStandalone({
           )}
           {walletView !== WALLET_VIEWS.PENDING && (
             <Blurb>
-              <span>New to Dogechain? &nbsp;</span>{' '}
+              <span>New to Lachain? &nbsp;</span>{' '}
               <ExternalLink href="https://ethereum.org/wallets/">Learn more about wallets</ExternalLink>
             </Blurb>
           )}

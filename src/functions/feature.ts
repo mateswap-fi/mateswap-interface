@@ -13,14 +13,14 @@ export enum Feature {
 }
 
 const features = {
-  [ChainId.DOGECHAIN]: [
+  [ChainId.LACHAIN]: [
     Feature.AMM,
     Feature.LIQUIDITY_MINING,
     // Feature.MIGRATE,
     Feature.ANALYTICS,
     Feature.STAKING,
   ],
-  [ChainId.DOGECHAIN_TESTNET]: [
+  [ChainId.LACHAIN_TESTNET]: [
     Feature.AMM,
     Feature.LIQUIDITY_MINING,
     /*

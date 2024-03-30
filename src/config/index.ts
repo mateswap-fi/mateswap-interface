@@ -1,8 +1,8 @@
 import { ChainId } from '@mateswapfi/sdk'
 
 const config = {
-  [ChainId.DOGECHAIN]: {},
-  [ChainId.DOGECHAIN_TESTNET]: {},
+  [ChainId.LACHAIN]: {},
+  [ChainId.LACHAIN_TESTNET]: {},
 }
 
 export default config

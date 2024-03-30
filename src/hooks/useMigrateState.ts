@@ -53,14 +53,14 @@ const useMigrateState: () => MigrateState = () => {
       console.log('onMigrate', units)
       let exchange;
 
-      if (chainId === ChainId.DOGECHAIN) {
+      if (chainId === ChainId.LACHAIN) {
         exchange = "YodeSwap";
-      } else if (chainId === ChainId.DOGECHAIN_TESTNET) {
+      } else if (chainId === ChainId.LACHAIN_TESTNET) {
         exchange = "YodeSwap Testnet";
       }
 
       addTransaction(tx, {
-        summary: `Migrate ${exchange} ${state.selectedLPToken.symbol} liquidity to BoneSwap`,
+        summary: `Migrate ${exchange} ${state.selectedLPToken.symbol} liquidity to MateSwap`,
       });
       setPendingMigrationHash(tx.hash);
 

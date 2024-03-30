@@ -13,7 +13,7 @@ import Typography from '../../../components/Typography'
 import { t } from '@lingui/macro'
 import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
 import { useLingui } from '@lingui/react'
-import { useUSDCValue } from '../../../hooks/useUSDCPrice'
+import { useUXDValue } from '../../../hooks/useUXDPrice'
 import { warningSeverity } from '../../../functions'
 
 export default function SwapModalHeader({
@@ -35,8 +35,8 @@ export default function SwapModalHeader({
 
   const [showInverted, setShowInverted] = useState<boolean>(false)
 
-  const fiatValueInput = useUSDCValue(trade.inputAmount)
-  const fiatValueOutput = useUSDCValue(trade.outputAmount)
+  const fiatValueInput = useUXDValue(trade.inputAmount)
+  const fiatValueOutput = useUXDValue(trade.outputAmount)
 
   const priceImpactSeverity = warningSeverity(trade.priceImpact)
 

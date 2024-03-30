@@ -14,7 +14,7 @@ function TradeSummary() {
           <RowFixed>
             <div className="text-white">
               1.576 →&nbsp;
-              <span className="text-green">1.787 WDOGE/BONE BLP</span>
+              <span className="text-green">1.787 LAC/MATE BLP</span>
             </div>
           </RowFixed>
         </RowBetween>

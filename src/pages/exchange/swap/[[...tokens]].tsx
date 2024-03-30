@@ -70,7 +70,7 @@ import { useLingui } from '@lingui/react'
 import usePrevious from '../../../hooks/usePrevious'
 import { useRouter } from 'next/router'
 import { useSwapCallback } from '../../../hooks/useSwapCallback'
-import { useUSDCValue } from '../../../hooks/useUSDCPrice'
+import { useUXDValue } from '../../../hooks/useUXDPrice'
 import { warningSeverity } from '../../../functions/prices'
 import * as gtag from '../../../functions/matomo'
 
@@ -161,8 +161,8 @@ export default function Swap() {
     [independentField, parsedAmount, showWrap, trade]
   )
 
-  const fiatValueInput = useUSDCValue(parsedAmounts[Field.INPUT])
-  const fiatValueOutput = useUSDCValue(parsedAmounts[Field.OUTPUT])
+  const fiatValueInput = useUXDValue(parsedAmounts[Field.INPUT])
+  const fiatValueOutput = useUXDValue(parsedAmounts[Field.OUTPUT])
   const priceImpact = computeFiatValuePriceImpact(fiatValueInput, fiatValueOutput)
 
   const { onSwitchTokens, onCurrencySelection, onUserInput, onChangeRecipient } = useSwapActionHandlers()
@@ -438,12 +438,12 @@ export default function Swap() {
   return (
     <Container id="swap-page" className="py-4 md:py-8 lg:py-12">
       <Head>
-        <title>{i18n._(t`BoneSwap`)} | BoneSwap</title>
-        {/* <title>{GetRateText({price: trade?.executionPrice, showInverted}) || i18n._(t`BoneSwap`)} | BoneSwap</title> */}
+        <title>{i18n._(t`MateSwap`)} | MateSwap</title>
+        {/* <title>{GetRateText({price: trade?.executionPrice, showInverted}) || i18n._(t`MateSwap`)} | MateSwap</title> */}
         <meta
           key="description"
           name="description"
-          content="BoneSwap allows for swapping of ERC20 compatible tokens"
+          content="MateSwap allows for swapping of ERC20 compatible tokens"
         />
       </Head>
       <TokenWarningModal

@@ -56,7 +56,7 @@ export const BLOCKED_ADDRESSES: string[] = [
 ]
 
 export const ANALYTICS_URL: { [chainId in ChainId]?: string } = {
-  // [ChainId.DOGECHAIN]: 'https://analytics.boneswap.fi',
+  // [ChainId.LACHAIN]: 'https://analytics.mateswap.fi',
 }
 
 export const EIP_1559_ACTIVATION_BLOCK: { [chainId in ChainId]?: number } = {}

@@ -70,8 +70,8 @@ export default function useFarmRewards() {
       const rewardPerBlock = (pool.allocPoint / pool.owner.totalAllocPoint) * sushiPerBlock
 
       const defaultReward = {
-        token: 'BONE',
-        icon: 'https://raw.githubusercontent.com/boneswap-fi/icons/master/token/sushi.jpg',
+        token: 'MATE',
+        icon: 'https://raw.githubusercontent.com/mateswap-fi/icons/master/token/sushi.jpg',
         rewardPerBlock,
         rewardPerDay: rewardPerBlock * blocksPerDay,
         rewardPrice: sushiPrice,
@@ -83,7 +83,7 @@ export default function useFarmRewards() {
         // override for mcv2...
         pool.owner.totalAllocPoint = masterChefV1TotalAllocPoint
 
-        const icon = `https://raw.githubusercontent.com/boneswap-fi/assets/master/blockchains/dogechain/assets/${getAddress(
+        const icon = `https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/Lachain/assets/${getAddress(
               pool.rewarder.rewardToken
             )}/logo.png`
 

@@ -8,7 +8,7 @@ const handler = async (req, res) => {
   }
 
   // const url = new URL(req.url, `http://${req.getHeaders().host}`)
-  const url = new URL(req.url, `https://boneswap.fi`)
+  const url = new URL(req.url, `https://mateswap.fi`)
   const orderUrl = url.searchParams.get('url')
   const endTime = url.searchParams.get('endTime')
   const fromToken = url.searchParams.get('fromToken')

@@ -5,7 +5,7 @@ import {
   CurrencyAmount,
   JSBI,
   Percent,
-  BONE_ADDRESS,
+  MATE_ADDRESS,
   ROUTER_ADDRESS,
   FACTORY_ADDRESS,
   TradeType,
@@ -69,7 +69,7 @@ export function useSwapActionHandlers(): {
       dispatch(
         selectCurrency({
           field,
-          currencyId: currency.isToken ? currency.address : 'WDOGE',
+          currencyId: currency.isToken ? currency.address : 'LAC',
         })
       )
     },
@@ -104,13 +104,13 @@ export function useSwapActionHandlers(): {
 
 // TODO: Swtich for ours...
 const BAD_RECIPIENT_ADDRESSES: { [chainId: string]: { [address: string]: true } } = {
-  [ChainId.DOGECHAIN]: {
-    [FACTORY_ADDRESS[ChainId.DOGECHAIN]]: true,
-    [ROUTER_ADDRESS[ChainId.DOGECHAIN]]: true,
+  [ChainId.LACHAIN]: {
+    [FACTORY_ADDRESS[ChainId.LACHAIN]]: true,
+    [ROUTER_ADDRESS[ChainId.LACHAIN]]: true,
   },
-  [ChainId.DOGECHAIN_TESTNET]: {
-    [FACTORY_ADDRESS[ChainId.DOGECHAIN_TESTNET]]: true,
-    [ROUTER_ADDRESS[ChainId.DOGECHAIN_TESTNET]]: true,
+  [ChainId.LACHAIN_TESTNET]: {
+    [FACTORY_ADDRESS[ChainId.LACHAIN_TESTNET]]: true,
+    [ROUTER_ADDRESS[ChainId.LACHAIN_TESTNET]]: true,
   },
 }
 
@@ -320,7 +320,7 @@ function parseCurrencyFromURLParameter(urlParam: any): string {
   if (typeof urlParam === 'string') {
     const valid = isAddress(urlParam)
     if (valid) return valid
-    if (urlParam.toUpperCase() === 'WDOGE') return 'WDOGE'
+    if (urlParam.toUpperCase() === 'LAC') return 'LAC'
   }
   return ''
 }
@@ -348,11 +348,11 @@ export function defaultSwapState(): SwapState {
   return queryParametersToSwapState(initialState);
 }
 
-export function queryParametersToSwapState(parsedQs: ParsedQs, chainId: ChainId = ChainId.DOGECHAIN): SwapState {
+export function queryParametersToSwapState(parsedQs: ParsedQs, chainId: ChainId = ChainId.LACHAIN): SwapState {
   let inputCurrency = parseCurrencyFromURLParameter(parsedQs.inputCurrency)
   let outputCurrency = parseCurrencyFromURLParameter(parsedQs.outputCurrency)
-  const eth = 'WDOGE'
-  const sushi = BONE_ADDRESS[chainId]
+  const eth = 'LAC'
+  const sushi = MATE_ADDRESS[chainId]
   if (inputCurrency === '' && outputCurrency === '') {
     inputCurrency = eth
     outputCurrency = sushi

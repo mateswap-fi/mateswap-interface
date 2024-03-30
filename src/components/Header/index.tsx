@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, BONE_ADDRESS } from '@mateswapfi/sdk'
+import { ChainId, Currency, NATIVE, MATE_ADDRESS } from '@mateswapfi/sdk'
 import { Feature, featureEnabled } from '../../functions/feature'
 import React, { useEffect, useState } from 'react'
 
@@ -39,7 +39,7 @@ function AppBar(): JSX.Element {
             <div className="px-4 py-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <Image src="/logo.png" alt="Bone" width="48px" height="48px" />
+                  <Image src="/logo.png" alt="Mate" width="48px" height="48px" />
                   <div className="hidden sm:block sm:ml-4">
                     <div className="flex space-x-2">
                       {/* <Buy /> */}
@@ -112,7 +112,7 @@ function AppBar(): JSX.Element {
                       {/* {chainId && featureEnabled(Feature.ANALYTICS, chainId) && (
                         <ExternalLink
                           id={`analytics-nav-link`}
-                          href={ANALYTICS_URL[chainId] || 'https://analytics.boneswap.fi'}
+                          href={ANALYTICS_URL[chainId] || 'https://analytics.mateswap.fi'}
                           className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                         >
                           {i18n._(t`Analytics`)}
@@ -124,30 +124,30 @@ function AppBar(): JSX.Element {
 
                 <div className="fixed bottom-0 left-0 z-10 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
                   <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
-                    {chainId && [ChainId.DOGECHAIN].includes(chainId) && library && library.provider.isMetaMask && (
+                    {chainId && [ChainId.LACHAIN].includes(chainId) && library && library.provider.isMetaMask && (
                       <>
                         <AddToken
-                          imageProps={{src: "/images/tokens/xbone-square.png", alt: "xBONE"}}
-                          text={i18n._(t`Add xBONE to your MetaMask wallet`)}
+                          imageProps={{src: "/images/tokens/xmate-square.png", alt: "xMATE"}}
+                          text={i18n._(t`Add xMATE to your MetaMask wallet`)}
                           metamaskProps={{
                             address: '0x09762030148180BB2309364aB8F793443cf09823',
-                            symbol: 'xBONE',
+                            symbol: 'xMATE',
                             decimals: 18,
-                            image: 'https://raw.githubusercontent.com/boneswap-fi/assets/master/blockchains/dogechain/assets/0x09762030148180BB2309364aB8F793443cf09823/logo.png',
+                            image: 'https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/Lachain/assets/0x09762030148180BB2309364aB8F793443cf09823/logo.png',
                           }} />
                       </>
                     )}
 
-                    {chainId && chainId in BONE_ADDRESS && library && library.provider.isMetaMask && (
+                    {chainId && chainId in MATE_ADDRESS && library && library.provider.isMetaMask && (
                       <>
                         <AddToken
-                          imageProps={{src: "/images/tokens/bone-square.png", alt: "BONE"}}
-                          text={i18n._(t`Add BONE to your MetaMask wallet`)}
+                          imageProps={{src: "/images/tokens/mate-square.png", alt: "MATE"}}
+                          text={i18n._(t`Add MATE to your MetaMask wallet`)}
                           metamaskProps={{
-                            address: BONE_ADDRESS[chainId],
-                            symbol: 'BONE',
+                            address: MATE_ADDRESS[chainId],
+                            symbol: 'MATE',
                             decimals: 18,
-                            image: 'https://raw.githubusercontent.com/boneswap-fi/assets/master/blockchains/dogechain/assets/0x1336a51a3aE667c3EA50aD7cf9979D134cF32Cf0/logo.png',
+                            image: 'https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/Lachain/assets/0x1336a51a3aE667c3EA50aD7cf9979D134cF32Cf0/logo.png',
                           }} />
                       </>
                     )}
@@ -299,7 +299,7 @@ function AppBar(): JSX.Element {
                 {/* {chainId && featureEnabled(Feature.ANALYTICS, chainId) && (
                   <ExternalLink
                     id={`analytics-nav-link`}
-                    href={ANALYTICS_URL[chainId] || 'https://analytics.boneswap.fi'}
+                    href={ANALYTICS_URL[chainId] || 'https://analytics.mateswap.fi'}
                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                   >
                     {i18n._(t`Analytics`)}

@@ -11,7 +11,7 @@ import { Dispatch, useCallback, useEffect, useMemo, useState } from 'react'
 import { useMasterChefContract, useMasterChefV2Contract } from '../../hooks/useContract'
 
 import { Contract } from '@ethersproject/contracts'
-import { BONE } from '../../config/tokens'
+import { MATE } from '../../config/tokens'
 import { Zero } from '@ethersproject/constants'
 import concat from 'lodash/concat'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
@@ -33,7 +33,7 @@ export function useChefContract(chef: Chef) {
 }
 
 const CHEFS = {
-  [ChainId.DOGECHAIN]: [Chef.MASTERCHEF, Chef.MASTERCHEF_V2],
+  [ChainId.LACHAIN]: [Chef.MASTERCHEF, Chef.MASTERCHEF_V2],
 }
 
 export function useChefContracts(chefs: Chef[]) {
@@ -88,7 +88,7 @@ export function usePendingSushi(farm) {
 
   const amount = value ? JSBI.BigInt(value.toString()) : undefined
 
-  return amount ? CurrencyAmount.fromRawAmount(BONE[chainId], amount) : undefined
+  return amount ? CurrencyAmount.fromRawAmount(MATE[chainId], amount) : undefined
 }
 
 export function usePendingToken(farm, contract) {

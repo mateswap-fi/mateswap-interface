@@ -22,7 +22,7 @@ import {
   getTransactions,
   getTruPrice,
   getYggPrice,
-  getBonePrice,
+  getMatePrice,
 } from '../fetchers'
 import { getEthPrice, getPairs } from '../fetchers'
 import useSWR, { SWRConfiguration } from 'swr'
@@ -187,14 +187,14 @@ export function useMaticPrice(variables = undefined, swrConfig: SWRConfiguration
   return data
 }
 
-// TODO this should be removed when possible as useBonePrice replaces it
+// TODO this should be removed when possible as useMatePrice replaces it
 export function useSushiPrice(variables = undefined, swrConfig: SWRConfiguration = undefined) {
   const { data } = useSWR(['sushiPrice', JSON.stringify(variables)], () => getSushiPrice(variables), swrConfig)
   return data
 }
 
-export function useBonePrice(variables = undefined, swrConfig: SWRConfiguration = undefined) {
-  const { data } = useSWR(['bonePrice', JSON.stringify(variables)], () => getBonePrice(variables), swrConfig)
+export function useMatePrice(variables = undefined, swrConfig: SWRConfiguration = undefined) {
+  const { data } = useSWR(['matePrice', JSON.stringify(variables)], () => getMatePrice(variables), swrConfig)
 
   return data
 }

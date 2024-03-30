@@ -103,7 +103,7 @@ export default function SettingsTab({ placeholderSlippage }: { placeholderSlippa
                 toggle={() => (singleHopOnly ? setSingleHopOnly(false) : setSingleHopOnly(true))}
               />
             </div>
-            {/* {chainId == ChainId.DOGECHAIN && (
+            {/* {chainId == ChainId.LACHAIN && (
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <Typography variant="sm" className="text-primary">

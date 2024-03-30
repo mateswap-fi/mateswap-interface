@@ -85,7 +85,7 @@ export default function SwapModalFooter({
               <div className="text-sm">{i18n._(t`Miner Tip`)}</div>
             </div>
             <div className="text-sm font-bold justify-center items-center flex right-align pl-1.5 text-high-emphesis">
-              {Dogechain.fromRawAmount(archerETHTip).toFixed(4)} ETH
+              {Lachain.fromRawAmount(archerETHTip).toFixed(4)} ETH
             </div>
           </div>
         )}
