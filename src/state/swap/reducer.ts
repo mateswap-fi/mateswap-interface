@@ -1,7 +1,7 @@
 import { Field, replaceSwapState, selectCurrency, setRecipient, switchCurrencies, typeInput } from './actions'
 
 import { createReducer } from '@reduxjs/toolkit'
-import { ChainId, BONE_ADDRESS } from '@boneswapfi/sdk'
+import { ChainId, BONE_ADDRESS } from '@mateswapfi/sdk'
 
 export interface SwapState {
   readonly independentField: Field

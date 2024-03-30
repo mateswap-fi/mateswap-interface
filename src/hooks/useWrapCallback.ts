@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, WNATIVE } from '@boneswapfi/sdk'
+import { ChainId, Currency, NATIVE, WNATIVE } from '@mateswapfi/sdk'
 
 import { tryParseAmount } from '../functions/parse'
 import { getGasPrice } from '../functions/trade'

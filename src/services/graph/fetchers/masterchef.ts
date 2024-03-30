@@ -7,7 +7,7 @@ import {
   poolsV2Query,
 } from '../queries'
 
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import { GRAPH_HOST } from '../constants'
 import { getTokenSubset } from './exchange'
 import { request } from 'graphql-request'

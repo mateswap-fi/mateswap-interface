@@ -1,6 +1,6 @@
 import { classNames, formatNumber, formatPercent } from '../../functions'
 
-import { ZERO } from '@boneswapfi/sdk'
+import { ZERO } from '@mateswapfi/sdk'
 import { Disclosure } from '@headlessui/react'
 import DoubleLogo from '../../components/DoubleLogo'
 import FarmListItemDetails from './FarmListItemDetails'

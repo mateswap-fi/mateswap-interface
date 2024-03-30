@@ -1,4 +1,4 @@
-import { ChainId, Currency } from '@boneswapfi/sdk'
+import { ChainId, Currency } from '@mateswapfi/sdk'
 
 export function currencyId(currency: Currency): string {
   if (currency.isNative) return 'WDOGE'

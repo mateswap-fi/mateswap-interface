@@ -1,4 +1,4 @@
-import { Currency } from '@boneswapfi/sdk'
+import { Currency } from '@mateswapfi/sdk'
 import React, { useCallback, useRef } from 'react'
 
 import AutoSizer from 'react-virtualized-auto-sizer'

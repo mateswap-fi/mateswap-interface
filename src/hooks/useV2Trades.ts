@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Pair, Trade, TradeType } from '@boneswapfi/sdk'
+import { Currency, CurrencyAmount, Pair, Trade, TradeType } from '@mateswapfi/sdk'
 import { PairState, useV2Pairs } from './useV2Pairs'
 
 import { BETTER_TRADE_LESS_HOPS_THRESHOLD } from '../constants'

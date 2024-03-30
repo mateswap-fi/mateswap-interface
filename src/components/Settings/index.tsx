@@ -1,4 +1,4 @@
-import { ChainId, Percent } from '@boneswapfi/sdk'
+import { ChainId, Percent } from '@mateswapfi/sdk'
 import React, { useRef, useState } from 'react'
 import {
   useExpertModeManager,

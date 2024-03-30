@@ -1,7 +1,7 @@
 import { FC } from "react";
 import CurrencyLogo from "../../components/CurrencyLogo";
 import { USDT, BONE } from '../../config/tokens'
-import { WWDOGE, ChainId, Currency } from '@boneswapfi/sdk'
+import { WWDOGE, ChainId, Currency } from '@mateswapfi/sdk'
 
 interface RoutingCurrencyBoxProps {
   currencyGroup: [string, {percentage: number, exchange: string, currency: string}[]]

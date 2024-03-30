@@ -1,7 +1,7 @@
 import { bentoUserTokensQuery, kashiPairsQuery, kashiUserPairsQuery } from '../queries/bentobox'
 import { getFraction, toAmount } from '../../../functions'
 
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import { GRAPH_HOST } from '../constants'
 import { getTokenSubset } from './exchange'
 import { pager } from '.'

@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, Dogechain } from '@boneswapfi/sdk'
+import { ChainId, CurrencyAmount, Dogechain } from '@mateswapfi/sdk'
 import { CheckCircleIcon, ExclamationIcon, XCircleIcon } from '@heroicons/react/outline'
 import React, { FC, useCallback, useMemo } from 'react'
 

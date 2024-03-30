@@ -1,4 +1,4 @@
-import { ChainId, JSBI } from '@boneswapfi/sdk'
+import { ChainId, JSBI } from '@mateswapfi/sdk'
 
 import { BigNumber } from '@ethersproject/bignumber'
 

@@ -1,4 +1,4 @@
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 
 const RPC = {
   [ChainId.DOGECHAIN]: 'https://rpc01-sg.dogechain.dog',

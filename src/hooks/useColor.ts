@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@boneswapfi/sdk'
+import { ChainId, Token } from '@mateswapfi/sdk'
 import { useLayoutEffect, useState } from 'react'
 
 import Vibrant from 'node-vibrant'

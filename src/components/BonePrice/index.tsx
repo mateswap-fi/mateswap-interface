@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { USDT, BONE } from '../../config/tokens'
 import { useV2TradeExactIn as useTradeExactIn } from '../../hooks/useV2Trades'
 import { tryParseAmount } from '../../functions/parse'
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import axios from 'axios'
 
 const BonePrice = () => {

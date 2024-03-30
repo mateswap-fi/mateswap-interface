@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, BONE_ADDRESS } from '@boneswapfi/sdk'
+import { ChainId, Currency, NATIVE, BONE_ADDRESS } from '@mateswapfi/sdk'
 import { Feature, featureEnabled } from '../../functions/feature'
 import React, { useEffect, useState } from 'react'
 

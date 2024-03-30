@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@boneswapfi/sdk'
+import { Currency, CurrencyAmount, Token } from '@mateswapfi/sdk'
 import React, { CSSProperties, MutableRefObject, useCallback, useMemo } from 'react'
 import { RowBetween, RowFixed } from '../../components/Row'
 

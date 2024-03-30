@@ -12,7 +12,7 @@ import {
 } from '../../services/graph'
 
 import { BigNumber } from '@ethersproject/bignumber'
-import { ChainId, WNATIVE, Token, CurrencyAmount, JSBI, WWDOGE, MASTERCHEF_ADDRESS, MASTERCHEF_V2_ADDRESS } from '@boneswapfi/sdk'
+import { ChainId, WNATIVE, Token, CurrencyAmount, JSBI, WWDOGE, MASTERCHEF_ADDRESS, MASTERCHEF_V2_ADDRESS } from '@mateswapfi/sdk'
 import { BONE, USDT, USDC } from '../../config/tokens'
 import Container from '../../components/Container'
 import FarmList from '../../features/onsen/FarmList'

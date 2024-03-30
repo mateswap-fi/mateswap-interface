@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@boneswapfi/sdk'
+import { ChainId, Token } from '@mateswapfi/sdk'
 
 import { AddressZero } from '@ethersproject/constants'
 import { CHAINLINK_PRICE_FEED_MAP } from '../config/oracles/chainlink'

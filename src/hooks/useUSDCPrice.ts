@@ -1,9 +1,9 @@
-import { ChainId, Currency, CurrencyAmount, Price, Token } from '@boneswapfi/sdk'
+import { ChainId, Currency, CurrencyAmount, Price, Token } from '@mateswapfi/sdk'
 
 import { useActiveWeb3React } from '../hooks/useActiveWeb3React'
 import { useMemo } from 'react'
 import { useV2TradeExactOut } from './useV2Trades'
-import { USDT } from '@boneswapfi/sdk'
+import { USDT } from '@mateswapfi/sdk'
 
 // import { wrappedCurrency } from "../functions/currency/wrappedCurrency";
 

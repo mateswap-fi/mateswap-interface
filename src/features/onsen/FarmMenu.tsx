@@ -1,4 +1,4 @@
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import NavLink from '../../components/NavLink'
 import React from 'react'
 import { t } from '@lingui/macro'

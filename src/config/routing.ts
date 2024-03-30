@@ -2,7 +2,7 @@ import {
     BONE, XBONE,
 } from '../config/tokens'
 // a list of tokens by chain
-import { ChainId, Currency, Token, WNATIVE, USDT, USDC } from '@boneswapfi/sdk'
+import { ChainId, Currency, Token, WNATIVE, USDT, USDC } from '@mateswapfi/sdk'
 
 type ChainTokenList = {
   readonly [chainId: number]: Token[]

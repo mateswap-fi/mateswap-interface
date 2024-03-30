@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@boneswapfi/sdk'
+import { Currency, CurrencyAmount, Token } from '@mateswapfi/sdk'
 
 import { useCallback } from 'react'
 import { useSushiBarContract } from './useContract'

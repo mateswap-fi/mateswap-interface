@@ -1,4 +1,4 @@
-import { Token } from '@boneswapfi/sdk'
+import { Token } from '@mateswapfi/sdk'
 import { TokenInfo } from '@uniswap/token-lists'
 import { isAddress } from './validate'
 import { useMemo } from 'react'

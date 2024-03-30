@@ -12,7 +12,7 @@ import {
   useSushiPrice,
 } from '../services/graph'
 
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import { getAddress } from '@ethersproject/address'
 import useActiveWeb3React from './useActiveWeb3React'
 import { useMemo } from 'react'

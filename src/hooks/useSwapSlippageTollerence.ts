@@ -1,4 +1,4 @@
-import { Currency, Percent, Trade, TradeType } from '@boneswapfi/sdk'
+import { Currency, Percent, Trade, TradeType } from '@mateswapfi/sdk'
 
 import { useMemo } from 'react'
 import { useUserSlippageToleranceWithDefault } from '../state/user/hooks'

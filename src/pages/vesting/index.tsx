@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Token } from '@boneswapfi/sdk'
+import { Currency, CurrencyAmount, Token } from '@mateswapfi/sdk'
 import React, { useEffect, useState } from 'react'
 import { useClaimCallback, useUserUnclaimedAmount } from '../../state/claim/hooks'
 import { useModalOpen, useToggleSelfClaimModal } from '../../state/application/hooks'

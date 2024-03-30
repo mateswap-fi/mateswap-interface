@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, JSBI, Percent, Token, TradeType, Trade as V2Trade } from '@boneswapfi/sdk'
+import { ChainId, Currency, CurrencyAmount, JSBI, Percent, Token, TradeType, Trade as V2Trade } from '@mateswapfi/sdk'
 import { BONE } from '../config/tokens'
 import { useMemo, useState } from 'react'
 

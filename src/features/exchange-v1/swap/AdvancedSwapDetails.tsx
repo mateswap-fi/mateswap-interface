@@ -1,4 +1,4 @@
-import { ChainId, Currency, CurrencyAmount, Dogechain, Percent, TradeType, Trade as V2Trade } from '@boneswapfi/sdk'
+import { ChainId, Currency, CurrencyAmount, Dogechain, Percent, TradeType, Trade as V2Trade } from '@mateswapfi/sdk'
 import React, { useMemo } from 'react'
 import { RowBetween, RowFixed } from '../../../components/Row'
 

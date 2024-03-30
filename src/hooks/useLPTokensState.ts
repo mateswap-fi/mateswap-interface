@@ -1,4 +1,4 @@
-import { ChainId, Token, Currency, CurrencyAmount } from "@boneswapfi/sdk";
+import { ChainId, Token, Currency, CurrencyAmount } from "@mateswapfi/sdk";
 import { YODESWAP_TOKENS } from '../config/tokens'
 import { useTokenBalances } from '../state/wallet/hooks'
 import { useCallback, useEffect, useRef, useState } from "react";

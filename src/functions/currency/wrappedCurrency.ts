@@ -1,4 +1,4 @@
-import { ChainId, Currency, NATIVE, WNATIVE } from '@boneswapfi/sdk'
+import { ChainId, Currency, NATIVE, WNATIVE } from '@mateswapfi/sdk'
 
 export function unwrappedToken(currency: Currency): Currency {
   if (currency.isNative) return currency

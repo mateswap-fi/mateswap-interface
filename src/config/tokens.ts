@@ -1,4 +1,4 @@
-import { ChainId, BONE_ADDRESS, USDC_ADDRESS, USDT_ADDRESS, BAR_ADDRESS, Token, WWDOGE} from '@boneswapfi/sdk'
+import { ChainId, BONE_ADDRESS, USDC_ADDRESS, USDT_ADDRESS, BAR_ADDRESS, Token, WWDOGE} from '@mateswapfi/sdk'
 
 type ChainTokenMap = {
   readonly [chainId in ChainId]?: Token

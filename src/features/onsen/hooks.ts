@@ -4,7 +4,7 @@ import {
   JSBI,
   MASTERCHEF_ADDRESS,
   MASTERCHEF_V2_ADDRESS,
-} from '@boneswapfi/sdk'
+} from '@mateswapfi/sdk'
 import { Chef } from './enum'
 import { NEVER_RELOAD, useSingleCallResult, useSingleContractMultipleData } from '../../state/multicall/hooks'
 import { Dispatch, useCallback, useEffect, useMemo, useState } from 'react'

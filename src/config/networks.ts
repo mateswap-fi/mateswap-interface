@@ -1,4 +1,4 @@
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 
 const Dogechain = 'https://raw.githubusercontent.com/boneswap-fi/icons/master/network/dogechain.jpg'
 const DogechainTestnet = 'https://raw.githubusercontent.com/boneswap-fi/icons/master/network/dogechain_testnet.jpg'

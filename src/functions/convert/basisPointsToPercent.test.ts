@@ -1,4 +1,4 @@
-import { JSBI, Percent } from '@boneswapfi/sdk'
+import { JSBI, Percent } from '@mateswapfi/sdk'
 
 import { basisPointsToPercent } from './basisPointsToPercent'
 

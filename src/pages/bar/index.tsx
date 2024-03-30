@@ -1,10 +1,10 @@
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
-import { BAR_ADDRESS, ZERO } from '@boneswapfi/sdk'
+import { BAR_ADDRESS, ZERO } from '@mateswapfi/sdk'
 import React, { useEffect, useState } from 'react'
 import { BONE, XBONE } from '../../config/tokens'
 
 import Button from '../../components/Button'
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import Container from '../../components/Container'
 import Dots from '../../components/Dots'
 import Head from 'next/head'

@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Dogechain, JSBI, NATIVE, Token } from '@boneswapfi/sdk'
+import { Currency, CurrencyAmount, Dogechain, JSBI, NATIVE, Token } from '@mateswapfi/sdk'
 import { PairState, useV2Pair } from '../../../hooks/useV2Pairs'
 import React, { useCallback, useEffect, useState } from 'react'
 

@@ -13,7 +13,7 @@ import {
   transactionsQuery,
 } from '../queries'
 
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import { GRAPH_HOST } from '../constants'
 import { pager } from './'
 

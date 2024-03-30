@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Percent } from '@boneswapfi/sdk'
+import { Currency, CurrencyAmount, Percent } from '@mateswapfi/sdk'
 import React, { useMemo } from 'react'
 
 import { t } from '@lingui/macro'

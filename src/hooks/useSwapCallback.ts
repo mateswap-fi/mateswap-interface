@@ -11,7 +11,7 @@ import {
   Trade as V2Trade,
   Fraction,
   ONE
-} from '@boneswapfi/sdk'
+} from '@mateswapfi/sdk'
 import { arrayify, hexlify, splitSignature } from '@ethersproject/bytes'
 import { isAddress, isZero } from '../functions/validate'
 import { useFactoryContract, useRouterContract } from './useContract'

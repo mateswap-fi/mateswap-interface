@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Percent } from '@boneswapfi/sdk'
+import { ChainId, JSBI, Percent } from '@mateswapfi/sdk'
 
 export const POOL_DENY = ['14', '29', '45', '30']
 

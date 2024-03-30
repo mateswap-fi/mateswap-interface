@@ -1,5 +1,5 @@
 import { AddressZero } from '@ethersproject/constants'
-import { ChainId, USDT_ADDRESS } from '@boneswapfi/sdk'
+import { ChainId, USDT_ADDRESS } from '@mateswapfi/sdk'
 
 type Currency = { address: string; decimals: number }
 

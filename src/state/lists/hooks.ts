@@ -1,6 +1,6 @@
 import { AppState } from '..'
-import { ChainId } from '@boneswapfi/sdk'
-import DEFAULT_TOKEN_LIST from '@boneswapfi/default-token-list'
+import { ChainId } from '@mateswapfi/sdk'
+import DEFAULT_TOKEN_LIST from '@mateswapfi/default-token-list'
 import { TokenList } from '@uniswap/token-lists'
 import { UNSUPPORTED_LIST_URLS } from '../../config/token-lists'
 import UNSUPPORTED_TOKEN_LIST from '../../constants/token-lists/boneswap-v2-unsupported.tokenlist.json'

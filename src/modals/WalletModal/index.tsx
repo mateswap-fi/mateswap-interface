@@ -21,7 +21,7 @@ import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import usePrevious from '../../hooks/usePrevious'
 import { SUPPORTED_NETWORKS } from '../NetworkModal'
-import { ChainId } from '@boneswapfi/sdk'
+import { ChainId } from '@mateswapfi/sdk'
 import cookie from 'cookie-cutter'
 import { useActiveWeb3React } from '../../hooks'
 

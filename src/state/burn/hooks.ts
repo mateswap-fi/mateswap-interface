@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, JSBI, Pair, Percent, Token } from '@boneswapfi/sdk'
+import { Currency, CurrencyAmount, JSBI, Pair, Percent, Token } from '@mateswapfi/sdk'
 import { Field, typeInput } from './actions'
 import { useAppDispatch, useAppSelector } from '../hooks'
 

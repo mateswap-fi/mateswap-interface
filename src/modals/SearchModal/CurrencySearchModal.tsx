@@ -1,4 +1,4 @@
-import { Currency, Token } from '@boneswapfi/sdk'
+import { Currency, Token } from '@mateswapfi/sdk'
 import React, { useCallback, useEffect, useState } from 'react'
 
 import CurrencyModalView from './CurrencyModalView'

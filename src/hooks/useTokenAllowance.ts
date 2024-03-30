@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@boneswapfi/sdk'
+import { CurrencyAmount, Token } from '@mateswapfi/sdk'
 
 import { useMemo } from 'react'
 import { useSingleCallResult } from '../state/multicall/hooks'

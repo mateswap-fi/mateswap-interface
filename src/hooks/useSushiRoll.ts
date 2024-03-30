@@ -1,4 +1,4 @@
-import { ChainId } from "@boneswapfi/sdk";
+import { ChainId } from "@mateswapfi/sdk";
 // import LPToken from "../types/LPToken";
 import { ethers } from "ethers";
 import { BigNumber } from '@ethersproject/bignumber'

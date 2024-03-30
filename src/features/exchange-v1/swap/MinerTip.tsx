@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, Dogechain } from '@boneswapfi/sdk'
+import { ChainId, CurrencyAmount, Dogechain } from '@mateswapfi/sdk'
 import {
   useUserArcherETHTip,
   useUserArcherGasPrice,

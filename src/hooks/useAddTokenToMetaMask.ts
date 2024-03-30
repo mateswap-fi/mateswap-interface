@@ -1,4 +1,4 @@
-import { Currency, Token } from '@boneswapfi/sdk'
+import { Currency, Token } from '@mateswapfi/sdk'
 import { useCallback, useState } from 'react'
 
 import { getCurrencyLogoUrls } from './../components/CurrencyLogo'
