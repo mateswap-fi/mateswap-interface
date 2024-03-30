@@ -32,9 +32,6 @@
   },
   "devDependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
-    "@mateswapfi/core": "0.0.1",
-    "@mateswapfi/default-token-list": "0.0.1",
-    "@mateswapfi/sdk": "^0.0.2",
     "@commitlint/cli": "^13.0.0",
     "@commitlint/config-conventional": "^13.0.0",
     "@ethereumjs/common": "^2.4.0",
@@ -62,6 +59,9 @@
     "@lingui/macro": "^3.10.2",
     "@lingui/react": "^3.10.2",
     "@lingui/remote-loader": "^3.10.4",
+    "@mateswapfi/core": "0.0.1",
+    "@mateswapfi/default-token-list": "0.0.1",
+    "@mateswapfi/sdk": "^0.0.2",
     "@metamask/jazzicon": "^2.0.0",
     "@next/bundle-analyzer": "^11.1.0",
     "@popperjs/core": "^2.9.2",
@@ -74,7 +74,7 @@
     "@tailwindcss/jit": "^0.1.18",
     "@transak/transak-sdk": "^1.0.28",
     "@types/node": "^15.12.2",
-    "@types/react": "^17.0.11",
+    "@types/react": "^18.2.73",
     "@uniswap/token-lists": "1.0.0-beta.24",
     "@visx/axis": "^1.17.1",
     "@visx/brush": "^1.18.1",
@@ -149,7 +149,7 @@
     "swr": "^1.0.0",
     "tailwindcss": "^2.2.9",
     "tailwindcss-border-gradient-radius": "^2.0.0",
-    "typescript": "^4.3.5",
+    "typescript": "^5.4.3",
     "wcag-contrast": "^3.0.0"
   },
   "next-unused": {
