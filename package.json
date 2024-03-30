@@ -1,9 +1,6 @@
 {
   "name": "mateswapfi-interface",
   "version": "1.0.0",
-  "engines": {
-    "node": "18.x"
-  },
   "private": true,
   "scripts": {
     "start": "next start",
@@ -175,6 +172,7 @@
     "bchaddrjs": "^0.5.2",
     "boxicons": "^2.1.2",
     "dotenv": "^16.0.1",
+    "graphql": "^16.8.1",
     "mainnet-js": "^0.4.34",
     "moment": "^2.29.1",
     "patch-package": "^6.4.7",
