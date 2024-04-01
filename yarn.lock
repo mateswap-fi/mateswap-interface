@@ -2238,10 +2238,10 @@
   dependencies:
     eip-712 "^0.4.3"
 
-"@mateswapfi/default-token-list@0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@mateswapfi/default-token-list/-/default-token-list-0.0.2.tgz#fce9fa74d24ee0cc8917e86a274f7a001545ba19"
-  integrity sha512-+WmvE4mSPNTPSQWxYlUDor5Ai+HUC/chyAi4KEyHdHeStw+XvLCxkvDMbnripN9rzupVbsE9djRgxlNgWDjc4w==
+"@mateswapfi/default-token-list@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@mateswapfi/default-token-list/-/default-token-list-0.0.3.tgz#49587e24d2b7a93410d40076725701aeb43b28b7"
+  integrity sha512-29j5toGi83IkrGIvundxSDU7ljbYlW9nM8xAcX4JNr3Ka2Iqe6ZLnOljn66Poy2UiKymFwY71llQobJrhwXWNw==
   dependencies:
     commitlint "^13.1.0"
     lint-staged "^11.1.2"

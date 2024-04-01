@@ -26,7 +26,7 @@ export const SUPPORTED_NETWORKS: {
   }
 } = {
   [ChainId.LACHAIN]: {
-    chainId: '0x7D0',
+    chainId: '0x112',
     chainName: 'Lachain',
     nativeCurrency: {
       name: 'Lac',
@@ -37,7 +37,7 @@ export const SUPPORTED_NETWORKS: {
     blockExplorerUrls: ['https://explorer.lachain.network/'],
   },
   [ChainId.LACHAIN_TESTNET]: {
-    chainId: '0x238',
+    chainId: '0x112',
     chainName: 'Lachain Testnet',
     nativeCurrency: {
       name: 'Lac',
