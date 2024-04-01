@@ -133,7 +133,7 @@ function AppBar(): JSX.Element {
                             address: '0x09762030148180BB2309364aB8F793443cf09823',
                             symbol: 'xMATE',
                             decimals: 18,
-                            image: 'https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/Lachain/assets/0x09762030148180BB2309364aB8F793443cf09823/logo.png',
+                            image: 'https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/lachain/assets/0x09762030148180BB2309364aB8F793443cf09823/logo.png',
                           }} />
                       </>
                     )}
@@ -147,7 +147,7 @@ function AppBar(): JSX.Element {
                             address: MATE_ADDRESS[chainId],
                             symbol: 'MATE',
                             decimals: 18,
-                            image: 'https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/Lachain/assets/0x1336a51a3aE667c3EA50aD7cf9979D134cF32Cf0/logo.png',
+                            image: 'https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/lachain/assets/0x1336a51a3aE667c3EA50aD7cf9979D134cF32Cf0/logo.png',
                           }} />
                       </>
                     )}

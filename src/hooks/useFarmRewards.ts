@@ -83,7 +83,7 @@ export default function useFarmRewards() {
         // override for mcv2...
         pool.owner.totalAllocPoint = masterChefV1TotalAllocPoint
 
-        const icon = `https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/Lachain/assets/${getAddress(
+        const icon = `https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/lachain/assets/${getAddress(
               pool.rewarder.rewardToken
             )}/logo.png`
 

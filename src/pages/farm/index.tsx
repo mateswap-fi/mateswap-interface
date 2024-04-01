@@ -454,7 +454,7 @@ export default function Farm(): JSX.Element {
 
       const defaultReward = {
         token: 'MATE',
-        icon: 'https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/Lachain/assets/0x1336a51a3aE667c3EA50aD7cf9979D134cF32Cf0/logo.png',
+        icon: 'https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/lachain/assets/0x1336a51a3aE667c3EA50aD7cf9979D134cF32Cf0/logo.png',
         rewardPerBlock,
         rewardPerDay: rewardPerBlock * blocksPerDay,
         rewardPrice: +matePriceUSD,
@@ -466,7 +466,7 @@ export default function Farm(): JSX.Element {
       //   // override for mcv2...
       //   pool.owner.totalAllocPoint = masterChefV1TotalAllocPoint
 
-      //   const icon = `https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/Lachain/assets/${getAddress(
+      //   const icon = `https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/lachain/assets/${getAddress(
       //     pool.rewarder.rewardToken
       //   )}/logo.png`
 
@@ -568,7 +568,7 @@ export default function Farm(): JSX.Element {
   })
 
   return (
-    <Container id="farm-page" className="lg:grid lg:grid-cols-4 h-full py-4 mx-auto md:py-8 lg:py-12 gap-9" maxWidth="7xl">
+    <Container id="farm-page" className="h-full py-4 mx-auto lg:grid lg:grid-cols-4 md:py-8 lg:py-12 gap-9" maxWidth="7xl">
       <Head>
         <title>Farm | MateSwap</title>
         <meta key="description" name="description" content="Farm MATE" />
@@ -588,7 +588,7 @@ export default function Farm(): JSX.Element {
           }}
         />
 
-        <div className="hidden md:block flex items-center text-lg font-bold text-high-emphesis whitespace-nowrap">
+        <div className="flex items-center hidden text-lg font-bold md:block text-high-emphesis whitespace-nowrap">
           Farms{' '}
           <div className="w-full h-0 ml-4 font-bold bg-transparent border border-b-0 border-transparent rounded text-high-emphesis md:border-gradient-r-blue-pink-dark-800 opacity-20"></div>
         </div>
