@@ -454,7 +454,7 @@ export default function Farm(): JSX.Element {
 
       const defaultReward = {
         token: 'MATE',
-        icon: 'https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/lachain/assets/0x10b9be5482e9a16efbd04be723e6452423fad6fc/logo.png',
+        icon: 'https://raw.githubusercontent.com/mateswap-fi/assets/master/blockchains/lachain/assets/0x10B9BE5482E9A16EFBD04BE723E6452423FAD6FC/logo.png',
         rewardPerBlock,
         rewardPerDay: rewardPerBlock * blocksPerDay,
         rewardPrice: +matePriceUSD,
