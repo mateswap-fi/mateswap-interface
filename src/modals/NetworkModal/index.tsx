@@ -33,8 +33,8 @@ export const SUPPORTED_NETWORKS: {
       symbol: 'LAC',
       decimals: 18,
     },
-    rpcUrls: ['https://rpc01-sg.Lachain.dog'],
-    blockExplorerUrls: ['https://explorer.Lachain.dog/'],
+    rpcUrls: ['https://rpc1.mainnet.lachain.network'],
+    blockExplorerUrls: ['https://explorer.lachain.network/'],
   },
   [ChainId.LACHAIN_TESTNET]: {
     chainId: '0x238',
@@ -44,8 +44,8 @@ export const SUPPORTED_NETWORKS: {
       symbol: 'LAC',
       decimals: 18,
     },
-    rpcUrls: ['https://rpc-testnet.Lachain.dog'],
-    blockExplorerUrls: ['https://explorer-testnet.Lachain.dog/'],
+    rpcUrls: ['https://rpc1.testnet.lachain.network'],
+    blockExplorerUrls: ['https://explorer-testnet.lachain.network/'],
   },
 }
 

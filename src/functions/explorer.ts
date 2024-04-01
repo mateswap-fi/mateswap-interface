@@ -2,8 +2,8 @@ import { ChainId } from '@mateswapfi/sdk'
 
 // Multichain Explorer
 const builders = {
-  Lachain_explorer: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
-    const prefix = `https://explorer.Lachain.dog/`
+  lachain_explorer: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
+    const prefix = `https://explorer.lachain.network/`
     switch (type) {
       case 'transaction':
         return `${prefix}/tx/${data}`
@@ -11,8 +11,8 @@ const builders = {
         return `${prefix}/${type}/${data}`
     }
   },
-  Lachain_explorer_testnet: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
-    const prefix = `https://explorer-testnet.Lachain.dog/`
+  lachain_explorer_testnet: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
+    const prefix = `https://explorer-testnet.lachain.network/`
     switch (type) {
       case 'transaction':
         return `${prefix}/tx/${data}`
@@ -32,11 +32,11 @@ interface ChainObject {
 const chains: ChainObject = {
   [ChainId.LACHAIN]: {
     chainName: '',
-    builder: builders.Lachain_explorer,
+    builder: builders.lachain_explorer,
   },
   [ChainId.LACHAIN_TESTNET]: {
     chainName: 'testnet',
-    builder: builders.Lachain_explorer_testnet,
+    builder: builders.lachain_explorer_testnet,
   },
 }
 

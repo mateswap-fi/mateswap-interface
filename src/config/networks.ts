@@ -1,11 +1,11 @@
 import { ChainId } from '@mateswapfi/sdk'
 
-const Lachain = 'https://raw.githubusercontent.com/mateswap-fi/icons/master/network/Lachain.jpg'
-const LachainTestnet = 'https://raw.githubusercontent.com/mateswap-fi/icons/master/network/Lachain_testnet.jpg'
+const lachain = 'https://raw.githubusercontent.com/mateswap-fi/icons/master/network/lachain.jpg'
+const lachainTestnet = 'https://raw.githubusercontent.com/mateswap-fi/icons/master/network/lachain.jpg'
 
 export const NETWORK_ICON = {
-  [ChainId.LACHAIN]: Lachain,
-  [ChainId.LACHAIN_TESTNET]: LachainTestnet,
+  [ChainId.LACHAIN]: lachain,
+  [ChainId.LACHAIN_TESTNET]: lachainTestnet,
 }
 
 export const NETWORK_LABEL: { [chainId in ChainId]?: string } = {
