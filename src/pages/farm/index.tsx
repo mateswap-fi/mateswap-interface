@@ -466,6 +466,8 @@ export default function Farm(): JSX.Element {
         (pool?.owner?.sushiPerSecond / 1e18) * averageBlockTime ||
         masterChefV1SushiPerBlock
 
+      console.log("sushiPerBlock: ", sushiPerBlock)
+
       const rewardPerBlock = (pool.allocPoint / pool.owner.totalAllocPoint) * sushiPerBlock
 
       const defaultReward = {
