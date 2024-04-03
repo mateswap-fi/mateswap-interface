@@ -5,13 +5,13 @@ type ChainTokenMap = {
 }
 
 export const MATE: ChainTokenMap = {
-  [ChainId.LACHAIN]: new Token(ChainId.LACHAIN, MATE_ADDRESS[ChainId.LACHAIN], 18, 'MATE', 'MateToken'),
-  [ChainId.LACHAIN_TESTNET]: new Token(ChainId.LACHAIN_TESTNET, MATE_ADDRESS[ChainId.LACHAIN_TESTNET], 18, 'MATE', 'MateToken'),
+  [ChainId.LACHAIN]: new Token(ChainId.LACHAIN, MATE_ADDRESS[ChainId.LACHAIN], 18, 'MATE', 'Mate'),
+  [ChainId.LACHAIN_TESTNET]: new Token(ChainId.LACHAIN_TESTNET, MATE_ADDRESS[ChainId.LACHAIN_TESTNET], 18, 'MATE', 'Mate'),
 }
 
 export const XMATE: ChainTokenMap = {
-  [ChainId.LACHAIN]: new Token(ChainId.LACHAIN, BAR_ADDRESS[ChainId.LACHAIN], 18, 'xMATE', 'Meat Mate'),
-  [ChainId.LACHAIN_TESTNET]: new Token(ChainId.LACHAIN_TESTNET, BAR_ADDRESS[ChainId.LACHAIN_TESTNET], 18, 'xMATE', 'Meat Mate'),
+  [ChainId.LACHAIN]: new Token(ChainId.LACHAIN, BAR_ADDRESS[ChainId.LACHAIN], 18, 'xMATE', 'Yerba'),
+  [ChainId.LACHAIN_TESTNET]: new Token(ChainId.LACHAIN_TESTNET, BAR_ADDRESS[ChainId.LACHAIN_TESTNET], 18, 'xMATE', 'Yerba'),
 }
 
 export const UXD: ChainTokenMap = {

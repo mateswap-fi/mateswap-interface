@@ -200,7 +200,7 @@ export default function Stake() {
             </div>
             <div className="max-w-lg pr-3 mb-2 text-sm leading-5 text-gray-500 md:text-base md:mb-4 md:pr-0">
               {i18n._(t`For every swap on the exchange on every chain, 0.05% of the swap fees are distributed as MATE
-                                proportional to your share of the MeatMate. When your MATE is staked into the MeatMate, you receive
+                                proportional to your share of the Yerba. When your MATE is staked into the Yerba, you receive
                                 xMATE in return.
                                 Your xMATE is continuously compounding, when you unstake you will receive all the originally deposited
                                 MATE and any additional from fees.`)}
@@ -463,7 +463,7 @@ export default function Stake() {
                                 text-sm font-bold cursor-pointer
                             `}
                     >
-                      {i18n._(t`Your MeatMate Stats`)}
+                      {i18n._(t`Your Yerba Stats`)}
                     </a>
                   )}
                 </div>
