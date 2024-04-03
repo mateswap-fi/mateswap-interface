@@ -13,7 +13,7 @@ import {
 
 import { BigNumber } from '@ethersproject/bignumber'
 import { ChainId, WNATIVE, Token, CurrencyAmount, JSBI, WLAC, MASTERCHEF_ADDRESS, MASTERCHEF_V2_ADDRESS } from '@mateswapfi/sdk'
-import { MATE, UXD } from '../../config/tokens'
+import { MATE, UXD, XMATE } from '../../config/tokens'
 import Container from '../../components/Container'
 import FarmList from '../../features/onsen/FarmList'
 import Head from 'next/head'
@@ -94,25 +94,36 @@ export default function Farm(): JSX.Element {
   const updateFarmFilter = useUpdateFarmFilter()
   updateFarmFilter(type)
 
+  // Mate-xMate	 500	0x211bbB315C9DAA1900B435E8E7ddBCB1b6776702  2
+  // Mate-WLAC	4950	0xEB3Fa9dF542F8afF75D00fA486f891A56B5c8923	3
+  // UXD-Mate	  3700	0x0c27280680Bf3c8358630336949B08127eC15CB7	4
+  // UXD-WLAC	   300	0xcDc3736cabB8864eB1ef84B7583f9C1b1c9a118e	5
+
   const hardcodedPairs = {
     [ChainId.LACHAIN]: {
-      "0xcAd6a9C7912f182427a0Cb9DDE41Fc550F24a4Ef": {
-        farmId: 0,
-        allocPoint: 5000,
-        token0: WLAC[ChainId.LACHAIN],
-        token1: UXD[ChainId.LACHAIN],
+      "0x211bbB315C9DAA1900B435E8E7ddBCB1b6776702": {
+        farmId: 2,
+        allocPoint: 500,
+        token0: MATE[ChainId.LACHAIN],
+        token1: XMATE[ChainId.LACHAIN],
       },
-      "0x2934004Ced6114dF564D9190c147E7eA38F235f9": {
-        farmId: 1,
-        allocPoint: 60000,
+      "0xEB3Fa9dF542F8afF75D00fA486f891A56B5c8923": {
+        farmId: 3,
+        allocPoint: 4950,
         token0: MATE[ChainId.LACHAIN],
         token1: WLAC[ChainId.LACHAIN],
       },
-      "0x8d26D58cdaf04fd9EAB2f00A353Ea4CAF74aa35e": {
-        farmId: 2,
-        allocPoint: 9000,
-        token0: MATE[ChainId.LACHAIN],
-        token1: UXD[ChainId.LACHAIN],
+      "0x0c27280680Bf3c8358630336949B08127eC15CB7": {
+        farmId: 4,
+        allocPoint: 3700,
+        token0: UXD[ChainId.LACHAIN],
+        token1: MATE[ChainId.LACHAIN],
+      },
+      "0xcDc3736cabB8864eB1ef84B7583f9C1b1c9a118e": {
+        farmId: 5,
+        allocPoint: 300,
+        token0: UXD[ChainId.LACHAIN],
+        token1: WLAC[ChainId.LACHAIN],
       },
     },
     [ChainId.LACHAIN_TESTNET]: {
@@ -422,7 +433,8 @@ export default function Farm(): JSX.Element {
   const masterChefV1TotalAllocPoint = useMasterChefV1TotalAllocPoint()
   const masterChefV1SushiPerBlock = useMasterChefV1SushiPerBlock()
 
-  const blocksPerDay = 86400 / Number(averageBlockTime)
+  const secondsPerDay = 86400
+  const blocksPerDay = secondsPerDay / Number(averageBlockTime)
 
   const map = (pool) => {
     // TODO: Account for fees generated in case of swap pairs, and use standard compounding
@@ -441,7 +453,11 @@ export default function Farm(): JSX.Element {
 
     const pair = swapPair || kashiPair
 
-    const blocksPerDay = 43200
+    // 1 block per 2 seconds, so
+    // per minute: 30 blocks
+    // per hour: 1800 blocks
+    // per day: 43200 blocks
+    // const blocksPerDay = 43200
 
     function getRewards() {
       // TODO: Some subgraphs give sushiPerBlock & sushiPerSecond, and mcv2 gives nothing
