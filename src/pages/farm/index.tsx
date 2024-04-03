@@ -461,12 +461,12 @@ export default function Farm(): JSX.Element {
 
     function getRewards() {
       // TODO: Some subgraphs give sushiPerBlock & sushiPerSecond, and mcv2 gives nothing
-      const sushiPerBlock =
-        pool?.owner?.sushiPerBlock / 1e18 ||
-        (pool?.owner?.sushiPerSecond / 1e18) * averageBlockTime ||
-        masterChefV1SushiPerBlock
-
-      console.log("sushiPerBlock: ", sushiPerBlock)
+      // const sushiPerBlock =
+      //   pool?.owner?.sushiPerBlock / 1e18 ||
+      //   (pool?.owner?.sushiPerSecond / 1e18) * averageBlockTime ||
+      //   masterChefV1SushiPerBlock
+      // console.log("sushiPerBlock: ", sushiPerBlock)
+      const sushiPerBlock = 1
 
       const rewardPerBlock = (pool.allocPoint / pool.owner.totalAllocPoint) * sushiPerBlock
 
