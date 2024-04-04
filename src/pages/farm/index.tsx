@@ -203,13 +203,22 @@ export default function Farm(): JSX.Element {
 
   if (lacUXDPool.reserves) {
     lacPriceUSD = Number.parseFloat(lacUXDPool.reserves[1].toFixed(18)) / Number.parseFloat(lacUXDPool.reserves[0].toFixed(18));
+  } else {
+    console.log("lacUXDPool.reserves is undefined")
   }
+
   if (UXDMatePool.reserves) {
     matePriceUSD = 1. / ( Number.parseFloat(UXDMatePool.reserves[0].toFixed(18)) / Number.parseFloat(UXDMatePool.reserves[1].toFixed(18)))
+  } else {
+    console.log("UXDMatePool.reserves is undefined")
   }
+
   if (lacMatePool.reserves) {
     matePriceLac = Number.parseFloat(lacMatePool.reserves[0].toFixed(18)) / Number.parseFloat(lacMatePool.reserves[1].toFixed(18))
+  } else {
+    console.log("lacMatePool.reserves is undefined")
   }
+
   console.log("lacPriceUSD:  ", lacPriceUSD);
   console.log("matePriceUSD:  ", matePriceUSD);
   console.log("matePriceLac: ", matePriceLac);
