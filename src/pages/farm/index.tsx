@@ -203,51 +203,20 @@ export default function Farm(): JSX.Element {
 
   if (lacUXDPool.reserves) {
     lacPriceUSD = Number.parseFloat(lacUXDPool.reserves[1].toFixed(18)) / Number.parseFloat(lacUXDPool.reserves[0].toFixed(18));
-    console.log(`lacUXDPool.reserves[0].toFixed(18): ${lacUXDPool.reserves[0].toFixed(18)}`)
-    console.log(`lacUXDPool.reserves[1].toFixed(18): ${lacUXDPool.reserves[1].toFixed(18)}`)
-  } else {
-    console.log("lacUXDPool.reserves is undefined")
   }
 
   if (UXDMatePool.reserves) {
     matePriceUSD = 1. / ( Number.parseFloat(UXDMatePool.reserves[0].toFixed(18)) / Number.parseFloat(UXDMatePool.reserves[1].toFixed(18)))
-    console.log(`UXDMatePool.reserves[0].toFixed(18): ${UXDMatePool.reserves[0].toFixed(18)}`)
-    console.log(`UXDMatePool.reserves[1].toFixed(18): ${UXDMatePool.reserves[1].toFixed(18)}`)
-
-  } else {
-    console.log("UXDMatePool.reserves is undefined")
   }
 
   if (lacMatePool.reserves) {
     matePriceLac = Number.parseFloat(lacMatePool.reserves[1].toFixed(18)) / Number.parseFloat(lacMatePool.reserves[0].toFixed(18))
-    console.log(`lacMatePool.reserves[0].toFixed(18): ${lacMatePool.reserves[0].toFixed(18)}`)
-    console.log(`lacMatePool.reserves[1].toFixed(18): ${lacMatePool.reserves[1].toFixed(18)}`)
-  } else {
-    console.log("lacMatePool.reserves is undefined")
   }
 
   console.log("lacPriceUSD:  ", lacPriceUSD);
   console.log("matePriceUSD:  ", matePriceUSD);
   console.log("matePriceLac: ", matePriceLac);
 
-
-  // lacPriceUSD:    0.057983388466602816
-  // matePriceUSD:   0.06279872386886039
-  // matePriceLac:   0.16167609
-
-
-  // lacUXDPool.reserves[0].toFixed(18):   0.46203802
-  // lacUXDPool.reserves[1].toFixed(18):   0.02679053
-  // UXDMatePool.reserves[0].toFixed(18): 13.00197408
-  // UXDMatePool.reserves[1].toFixed(18):  0.81650738
-  // lacMatePool.reserves[0].toFixed(18):  3.54517076
-  // lacMatePool.reserves[1].toFixed(18):  0.57316936
-
-
-
-  // console.log("lacPriceUSD:  ", lacPriceUSD);
-  // console.log("matePriceUSD:  ", matePriceUSD);
-  // console.log("matePriceLac: ", matePriceLac);
 
   // for (const [pairAddress, pair] of Object.entries(hardcodedPairs2x[chainId])) {
   //   swapPairs.push({
@@ -467,9 +436,6 @@ export default function Farm(): JSX.Element {
   const masterChefV1TotalAllocPoint = useMasterChefV1TotalAllocPoint()
   const masterChefV1SushiPerBlock = useMasterChefV1SushiPerBlock()
 
-  // console.log("masterChefV1TotalAllocPoint: ", masterChefV1TotalAllocPoint)
-  // console.log("masterChefV1SushiPerBlock: ", masterChefV1SushiPerBlock)
-
   const secondsPerDay = 86400
   const blocksPerDay = secondsPerDay / Number(averageBlockTime)
 
@@ -502,12 +468,8 @@ export default function Farm(): JSX.Element {
       //   pool?.owner?.sushiPerBlock / 1e18 ||
       //   (pool?.owner?.sushiPerSecond / 1e18) * averageBlockTime ||
       //   masterChefV1SushiPerBlock
-      // console.log("sushiPerBlock: ", sushiPerBlock)
-      const sushiPerBlock = 1
 
-      // console.log("pool.allocPoint: ", pool.allocPoint)
-      // console.log("pool.owner.totalAllocPoint: ", pool.owner.totalAllocPoint)
-      // console.log("sushiPerBlock: ", sushiPerBlock)
+      const sushiPerBlock = 1
       const rewardPerBlock = (pool.allocPoint / pool.owner.totalAllocPoint) * sushiPerBlock
 
       const defaultReward = {
