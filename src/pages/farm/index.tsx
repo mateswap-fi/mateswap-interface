@@ -175,8 +175,8 @@ export default function Farm(): JSX.Element {
       pending: 0,
       owner: {
         id: MASTERCHEF_ADDRESS[chainId],
-        sushiPerBlock: "100000000000000000000",
-        totalAllocPoint: "100000"
+        sushiPerBlock: "1000000000000000000",
+        totalAllocPoint: "10000"
       },
       userCount: 1,
     }
@@ -250,8 +250,8 @@ export default function Farm(): JSX.Element {
   //     pending: 0,
   //     owner: {
   //       id: MASTERCHEF_V2_ADDRESS[chainId],
-  //       sushiPerBlock: "100000000000000000000",
-  //       totalAllocPoint: "100000",
+  //       sushiPerBlock: "1000000000000000000",
+  //       totalAllocPoint: "10000",
   //     },
 
   //     rewarder: {
@@ -433,6 +433,9 @@ export default function Farm(): JSX.Element {
   const masterChefV1TotalAllocPoint = useMasterChefV1TotalAllocPoint()
   const masterChefV1SushiPerBlock = useMasterChefV1SushiPerBlock()
 
+  console.log("masterChefV1TotalAllocPoint: ", masterChefV1TotalAllocPoint)
+  console.log("masterChefV1SushiPerBlock: ", masterChefV1SushiPerBlock)
+
   const secondsPerDay = 86400
   const blocksPerDay = secondsPerDay / Number(averageBlockTime)
 
@@ -468,6 +471,9 @@ export default function Farm(): JSX.Element {
       // console.log("sushiPerBlock: ", sushiPerBlock)
       const sushiPerBlock = 1
 
+      console.log("pool.allocPoint: ", pool.allocPoint)
+      console.log("pool.owner.totalAllocPoint: ", pool.owner.totalAllocPoint)
+      console.log("sushiPerBlock: ", sushiPerBlock)
       const rewardPerBlock = (pool.allocPoint / pool.owner.totalAllocPoint) * sushiPerBlock
 
       const defaultReward = {
