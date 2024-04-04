@@ -219,7 +219,7 @@ export default function Farm(): JSX.Element {
   }
 
   if (lacMatePool.reserves) {
-    matePriceLac = Number.parseFloat(lacMatePool.reserves[0].toFixed(18)) / Number.parseFloat(lacMatePool.reserves[1].toFixed(18))
+    matePriceLac = Number.parseFloat(lacMatePool.reserves[1].toFixed(18)) / Number.parseFloat(lacMatePool.reserves[0].toFixed(18))
     console.log(`lacMatePool.reserves[0].toFixed(18): ${lacMatePool.reserves[0].toFixed(18)}`)
     console.log(`lacMatePool.reserves[1].toFixed(18): ${lacMatePool.reserves[1].toFixed(18)}`)
   } else {
