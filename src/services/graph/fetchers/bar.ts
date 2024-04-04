@@ -10,8 +10,7 @@ const BAR = {
 }
 
 export const bar = async (query, variables = undefined) => {
-  const { chainId } = useActiveWeb3React()
-
+  const { chainId } = useActiveWeb3React()wip
   request(`${GRAPH_HOST[chainId]}/subgraphs/name/${BAR[chainId]}`, query, variables)
 }
 

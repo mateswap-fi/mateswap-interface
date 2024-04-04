@@ -188,7 +188,7 @@ export default function Farm(): JSX.Element {
   }
 
   // console.log(farms);
-  const lacUXDPool = farms[0].pool;
+  const lacUXDPool = farms[3].pool;
   const lacMatePool = farms[1].pool;
   const UXDMatePool = farms[2].pool;
   let lacPriceUSD = 0;
@@ -202,14 +202,17 @@ export default function Farm(): JSX.Element {
   // })
 
   if (lacUXDPool.reserves) {
-    lacPriceUSD = Number.parseFloat(lacUXDPool.reserves[1].toFixed(6)) / Number.parseFloat(lacUXDPool.reserves[0].toFixed(18));
+    lacPriceUSD = Number.parseFloat(lacUXDPool.reserves[1].toFixed(18)) / Number.parseFloat(lacUXDPool.reserves[0].toFixed(18));
   }
   if (UXDMatePool.reserves) {
-    matePriceUSD = 1. / ( Number.parseFloat(UXDMatePool.reserves[0].toFixed(18)) / Number.parseFloat(UXDMatePool.reserves[1].toFixed(6)))
+    matePriceUSD = 1. / ( Number.parseFloat(UXDMatePool.reserves[0].toFixed(18)) / Number.parseFloat(UXDMatePool.reserves[1].toFixed(18)))
   }
   if (lacMatePool.reserves) {
     matePriceLac = Number.parseFloat(lacMatePool.reserves[1].toFixed(18)) / Number.parseFloat(lacMatePool.reserves[0].toFixed(18))
   }
+  console.log("lacPriceUSD:  ", lacPriceUSD);
+  console.log("matePriceUSD:  ", matePriceUSD);
+  console.log("matePriceLac: ", matePriceLac);
 
   // console.log("lacPriceUSD:  ", lacPriceUSD);
   // console.log("matePriceUSD:  ", matePriceUSD);
@@ -308,12 +311,12 @@ export default function Farm(): JSX.Element {
           tvl = reserve * matePriceUSD * 2;
         }
         else if (farms[i].pool.token0 === UXD[chainId].address) {
-          const reserve = Number.parseFloat(farms[i].pool.reserves[0].toFixed(6));
+          const reserve = Number.parseFloat(farms[i].pool.reserves[0].toFixed(18));
           // tvl = reserve / totalSupply * chefBalance * 2;
           tvl = reserve * 2;
         }
         else if (farms[i].pool.token1 === UXD[chainId].address) {
-          const reserve = Number.parseFloat(farms[i].pool.reserves[1].toFixed(6));
+          const reserve = Number.parseFloat(farms[i].pool.reserves[1].toFixed(18));
           // tvl = reserve / (totalSupply * chefBalance * 2);
           tvl = reserve * 2;
         }
