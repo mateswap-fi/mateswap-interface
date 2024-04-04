@@ -214,6 +214,15 @@ export default function Farm(): JSX.Element {
   console.log("matePriceUSD:  ", matePriceUSD);
   console.log("matePriceLac: ", matePriceLac);
 
+  console.log(`lacUXDPool.reserves[0].toFixed(18): ${lacUXDPool.reserves[0].toFixed(18)}`)
+  console.log(`lacUXDPool.reserves[1].toFixed(18): ${lacUXDPool.reserves[1].toFixed(18)}`)
+
+  console.log(`UXDMatePool.reserves[0].toFixed(18): ${UXDMatePool.reserves[0].toFixed(18)}`)
+  console.log(`UXDMatePool.reserves[1].toFixed(18): ${UXDMatePool.reserves[1].toFixed(18)}`)
+
+  console.log(`lacMatePool.reserves[0].toFixed(18): ${lacMatePool.reserves[0].toFixed(18)}`)
+  console.log(`lacMatePool.reserves[1].toFixed(18): ${lacMatePool.reserves[1].toFixed(18)}`)
+
   // lacPriceUSD:    0.057983388466602816
   // matePriceUSD:   0.06279872386886039
   // matePriceLac:   0.16167609
