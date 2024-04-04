@@ -236,6 +236,15 @@ export default function Farm(): JSX.Element {
   // matePriceLac:   0.16167609
 
 
+  // lacUXDPool.reserves[0].toFixed(18):   0.46203802
+  // lacUXDPool.reserves[1].toFixed(18):   0.02679053
+  // UXDMatePool.reserves[0].toFixed(18): 13.00197408
+  // UXDMatePool.reserves[1].toFixed(18):  0.81650738
+  // lacMatePool.reserves[0].toFixed(18):  3.54517076
+  // lacMatePool.reserves[1].toFixed(18):  0.57316936
+
+
+
   // console.log("lacPriceUSD:  ", lacPriceUSD);
   // console.log("matePriceUSD:  ", matePriceUSD);
   // console.log("matePriceLac: ", matePriceLac);
@@ -458,8 +467,8 @@ export default function Farm(): JSX.Element {
   const masterChefV1TotalAllocPoint = useMasterChefV1TotalAllocPoint()
   const masterChefV1SushiPerBlock = useMasterChefV1SushiPerBlock()
 
-  console.log("masterChefV1TotalAllocPoint: ", masterChefV1TotalAllocPoint)
-  console.log("masterChefV1SushiPerBlock: ", masterChefV1SushiPerBlock)
+  // console.log("masterChefV1TotalAllocPoint: ", masterChefV1TotalAllocPoint)
+  // console.log("masterChefV1SushiPerBlock: ", masterChefV1SushiPerBlock)
 
   const secondsPerDay = 86400
   const blocksPerDay = secondsPerDay / Number(averageBlockTime)
@@ -496,9 +505,9 @@ export default function Farm(): JSX.Element {
       // console.log("sushiPerBlock: ", sushiPerBlock)
       const sushiPerBlock = 1
 
-      console.log("pool.allocPoint: ", pool.allocPoint)
-      console.log("pool.owner.totalAllocPoint: ", pool.owner.totalAllocPoint)
-      console.log("sushiPerBlock: ", sushiPerBlock)
+      // console.log("pool.allocPoint: ", pool.allocPoint)
+      // console.log("pool.owner.totalAllocPoint: ", pool.owner.totalAllocPoint)
+      // console.log("sushiPerBlock: ", sushiPerBlock)
       const rewardPerBlock = (pool.allocPoint / pool.owner.totalAllocPoint) * sushiPerBlock
 
       const defaultReward = {
