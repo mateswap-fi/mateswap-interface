@@ -15,8 +15,8 @@ export const XMATE: ChainTokenMap = {
 }
 
 export const UXD: ChainTokenMap = {
-  [ChainId.LACHAIN]: new Token(ChainId.LACHAIN, UXD_ADDRESS[ChainId.LACHAIN], 6, 'UXD', 'UXD token'),
-  [ChainId.LACHAIN_TESTNET]: new Token(ChainId.LACHAIN_TESTNET, UXD_ADDRESS[ChainId.LACHAIN_TESTNET], 6, 'UXD', 'UXD token'),
+  [ChainId.LACHAIN]: new Token(ChainId.LACHAIN, UXD_ADDRESS[ChainId.LACHAIN], 18, 'UXD', 'UXD token'),
+  [ChainId.LACHAIN_TESTNET]: new Token(ChainId.LACHAIN_TESTNET, UXD_ADDRESS[ChainId.LACHAIN_TESTNET], 18, 'UXD', 'UXD token'),
 }
 
 export const WLAC_EXTENDED: { [chainId: number]: Token } = {

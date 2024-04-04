@@ -2247,10 +2247,10 @@
     lint-staged "^11.1.2"
     yarn "^1.22.19"
 
-"@mateswapfi/sdk@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@mateswapfi/sdk/-/sdk-0.0.2.tgz#a4623ae40e75f8f80175bc07a874fdb052ea25cb"
-  integrity sha512-OJa8lQNdiGV81e2EC8J1JieZY8Yn68eoOfycKpdGmynhOzhNmFdbVzPiFDb1nj1VNDC0CdasWtL7sgBW+gA8VA==
+"@mateswapfi/sdk@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@mateswapfi/sdk/-/sdk-0.0.3.tgz#ee4992f2d32a371152b104e35075b5e6374ee22f"
+  integrity sha512-2++zNK87Gs818LFBhMkqivOlZluwlFjH33BB1JwPxQX82AjbceyfFZF4iYaX+gFk85UEOZWo9kGSY39q65dGsg==
   dependencies:
     big.js "^6.1.0"
     decimal.js-light "^2.5.0"
