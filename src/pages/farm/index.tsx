@@ -203,18 +203,25 @@ export default function Farm(): JSX.Element {
 
   if (lacUXDPool.reserves) {
     lacPriceUSD = Number.parseFloat(lacUXDPool.reserves[1].toFixed(18)) / Number.parseFloat(lacUXDPool.reserves[0].toFixed(18));
+    console.log(`lacUXDPool.reserves[0].toFixed(18): ${lacUXDPool.reserves[0].toFixed(18)}`)
+    console.log(`lacUXDPool.reserves[1].toFixed(18): ${lacUXDPool.reserves[1].toFixed(18)}`)
   } else {
     console.log("lacUXDPool.reserves is undefined")
   }
 
   if (UXDMatePool.reserves) {
     matePriceUSD = 1. / ( Number.parseFloat(UXDMatePool.reserves[0].toFixed(18)) / Number.parseFloat(UXDMatePool.reserves[1].toFixed(18)))
+    console.log(`UXDMatePool.reserves[0].toFixed(18): ${UXDMatePool.reserves[0].toFixed(18)}`)
+    console.log(`UXDMatePool.reserves[1].toFixed(18): ${UXDMatePool.reserves[1].toFixed(18)}`)
+
   } else {
     console.log("UXDMatePool.reserves is undefined")
   }
 
   if (lacMatePool.reserves) {
     matePriceLac = Number.parseFloat(lacMatePool.reserves[0].toFixed(18)) / Number.parseFloat(lacMatePool.reserves[1].toFixed(18))
+    console.log(`lacMatePool.reserves[0].toFixed(18): ${lacMatePool.reserves[0].toFixed(18)}`)
+    console.log(`lacMatePool.reserves[1].toFixed(18): ${lacMatePool.reserves[1].toFixed(18)}`)
   } else {
     console.log("lacMatePool.reserves is undefined")
   }
@@ -223,14 +230,6 @@ export default function Farm(): JSX.Element {
   console.log("matePriceUSD:  ", matePriceUSD);
   console.log("matePriceLac: ", matePriceLac);
 
-  console.log(`lacUXDPool.reserves[0].toFixed(18): ${lacUXDPool.reserves[0].toFixed(18)}`)
-  console.log(`lacUXDPool.reserves[1].toFixed(18): ${lacUXDPool.reserves[1].toFixed(18)}`)
-
-  console.log(`UXDMatePool.reserves[0].toFixed(18): ${UXDMatePool.reserves[0].toFixed(18)}`)
-  console.log(`UXDMatePool.reserves[1].toFixed(18): ${UXDMatePool.reserves[1].toFixed(18)}`)
-
-  console.log(`lacMatePool.reserves[0].toFixed(18): ${lacMatePool.reserves[0].toFixed(18)}`)
-  console.log(`lacMatePool.reserves[1].toFixed(18): ${lacMatePool.reserves[1].toFixed(18)}`)
 
   // lacPriceUSD:    0.057983388466602816
   // matePriceUSD:   0.06279872386886039
