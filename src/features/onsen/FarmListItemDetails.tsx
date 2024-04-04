@@ -77,11 +77,25 @@ const FarmListItem = ({ farm }) => {
   const token0Name = farm.pool.token0 === farm.pair.token0.id ? farm.pair.token0.symbol : farm.pair.token1.symbol
   const token1Name = farm.pool.token1 === farm.pair.token1.id ? farm.pair.token1.symbol : farm.pair.token0.symbol
 
+  // 13001974080351793625
+  //   816507388223175420
+
   console.log(`token0Reserve: ${token0Reserve}`);
   console.log(`token1Reserve: ${token1Reserve}`);
   console.log(`poolFraction: ${poolFraction}`);
   console.log(`token0Amount: ${token0Amount}`);
   console.log(`token1Amount: ${token1Amount}`);
+
+  console.log(`token0Amount.currency.decimals: ${token0Amount.currency.decimals}`);
+  console.log(`token1Amount.currency.decimals: ${token1Amount.currency.decimals}`);
+
+  console.log(`token0Amount.toFixed(...): ${token0Amount.toFixed(token0Amount.currency.decimals > 2 ? 2 : undefined)}`);
+  console.log(`token1Amount.toFixed(...): ${token1Amount.toFixed(token1Amount.currency.decimals > 2 ? 2 : undefined)}`);
+
+  console.log(`token0Amount.toFixed(18): ${token0Amount.toFixed(18)}`);
+  console.log(`token1Amount.toFixed(18): ${token1Amount.toFixed(18)}`);
+
+
 
   return (
     <Transition
@@ -173,9 +187,7 @@ const FarmListItem = ({ farm }) => {
                   {amount && farm.pool ? `(${formatPercent(Math.min(Number.parseFloat(amount?.toFixed()) / farm.chefBalance * 100, 100)).toString()} ` + i18n._(t`of pool`) + `)` : ''}
                 </div>
                 <div className="pr-4 mb-2 text-sm text-right cursor-pointer text-secondary">
-                  {
-                    token0Amount.toFixed(token0Amount.currency.decimals > 2 ? 2 : undefined)
-                  }
+                  {token0Amount.toFixed(token0Amount.currency.decimals > 2 ? 2 : undefined)}
                   {token0Name} + {token1Amount.toFixed(token1Amount.currency.decimals > 2 ? 2 : undefined)} {token1Name} ({formatNumber(poolFraction * farm.tvl, true)})
                 </div>
               </div>
