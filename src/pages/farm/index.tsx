@@ -126,13 +126,13 @@ export default function Farm(): JSX.Element {
         token1: WLAC[ChainId.LACHAIN],
       },
 
-      // * RPF1-RPF2	 550	 5,50	 5,50	0xD6F81be95ABfAbccC7F1af9D05fFa8a412fC3bE3	0x2940d25aD3B57192E66C3d90A0ee5664F6D56317	0x8D22e8F65A6786Ec0F675A7Ab99Bb859270552cA	6
-      "0x8D22e8F65A6786Ec0F675A7Ab99Bb859270552cA": {
-        farmId: 6,
-        allocPoint: 550,
-        token0: new Token(ChainId.LACHAIN, "0xD6F81be95ABfAbccC7F1af9D05fFa8a412fC3bE3", 18, 'RPF1', 'RPF1'),
-        token1: new Token(ChainId.LACHAIN, "0x2940d25aD3B57192E66C3d90A0ee5664F6D56317", 18, 'RPF2', 'RPF2'),
-      },
+      // // * RPF1-RPF2	 550	 5,50	 5,50	0xD6F81be95ABfAbccC7F1af9D05fFa8a412fC3bE3	0x2940d25aD3B57192E66C3d90A0ee5664F6D56317	0x8D22e8F65A6786Ec0F675A7Ab99Bb859270552cA	6
+      // "0x8D22e8F65A6786Ec0F675A7Ab99Bb859270552cA": {
+      //   farmId: 6,
+      //   allocPoint: 550,
+      //   token0: new Token(ChainId.LACHAIN, "0xD6F81be95ABfAbccC7F1af9D05fFa8a412fC3bE3", 18, 'RPF1', 'RPF1'),
+      //   token1: new Token(ChainId.LACHAIN, "0x2940d25aD3B57192E66C3d90A0ee5664F6D56317", 18, 'RPF2', 'RPF2'),
+      // },
     },
     [ChainId.LACHAIN_TESTNET]: {
     }
