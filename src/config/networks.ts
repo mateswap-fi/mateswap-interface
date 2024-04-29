@@ -9,6 +9,6 @@ export const NETWORK_ICON = {
 }
 
 export const NETWORK_LABEL: { [chainId in ChainId]?: string } = {
-  [ChainId.LACHAIN]: 'Lachain',
-  [ChainId.LACHAIN_TESTNET]: 'Lachain Testnet',
+  [ChainId.LACHAIN]: 'LaChain',
+  [ChainId.LACHAIN_TESTNET]: 'LaChain Testnet',
 }

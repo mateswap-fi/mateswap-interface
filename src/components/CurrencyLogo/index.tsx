@@ -6,8 +6,8 @@ import { WrappedTokenInfo } from '../../state/lists/wrappedTokenInfo'
 import useHttpLocations from '../../hooks/useHttpLocations'
 
 const BLOCKCHAIN = {
-  [ChainId.LACHAIN]: 'Lachain',
-  [ChainId.LACHAIN_TESTNET]: 'Lachain-testnet',
+  [ChainId.LACHAIN]: 'LaChain',
+  [ChainId.LACHAIN_TESTNET]: 'LaChain-testnet',
 }
 
 function getCurrencySymbol(currency) {
