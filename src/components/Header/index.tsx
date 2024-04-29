@@ -109,6 +109,15 @@ function AppBar(): JSX.Element {
                           </a>
                         </NavLink>
                       )}
+                      {chainId && (
+                        <ExternalLink
+                          id={`bridge-nav-link`}
+                          href={'https://bridge.lachain.network'}
+                          className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                        >
+                          {i18n._(t`Bridge`)}
+                        </ExternalLink>
+                      )}
                       {/* {chainId && featureEnabled(Feature.ANALYTICS, chainId) && (
                         <ExternalLink
                           id={`analytics-nav-link`}
@@ -294,6 +303,16 @@ function AppBar(): JSX.Element {
                       {i18n._(t`Stake`)}
                     </a>
                   </Link>
+                )}
+
+                {chainId && (
+                  <ExternalLink
+                    id={`bridge-nav-link`}
+                    href={'https://bridge.lachain.network'}
+                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                  >
+                    {i18n._(t`Bridge`)}
+                  </ExternalLink>
                 )}
 
                 {/* {chainId && featureEnabled(Feature.ANALYTICS, chainId) && (
