@@ -55,7 +55,7 @@
     "@lingui/react": "^3.10.2",
     "@lingui/remote-loader": "^3.10.4",
     "@mateswapfi/core": "0.0.1",
-    "@mateswapfi/default-token-list": "0.0.3",
+    "@mateswapfi/default-token-list": "0.0.4",
     "@mateswapfi/sdk": "^0.0.3",
     "@metamask/jazzicon": "^2.0.0",
     "@next/bundle-analyzer": "^11.1.0",
