@@ -109,7 +109,7 @@ export default function Farm(): JSX.Element {
       },
       "0xEB3Fa9dF542F8afF75D00fA486f891A56B5c8923": {
         farmId: 3,
-        allocPoint: 4950,
+        allocPoint: 4450,
         token0: MATE[ChainId.LACHAIN],
         token1: WLAC[ChainId.LACHAIN],
       },
@@ -121,9 +121,47 @@ export default function Farm(): JSX.Element {
       },
       "0xcDc3736cabB8864eB1ef84B7583f9C1b1c9a118e": {
         farmId: 5,
-        allocPoint: 300,
+        allocPoint: 60,
         token0: UXD[ChainId.LACHAIN],
         token1: WLAC[ChainId.LACHAIN],
+      },
+
+
+    // MATE-WETH	500	5,00	5,00			0x10b9be5482e9a16efbd04be723e6452423fad6fc	0x42C8C9C0f0A98720dACdaeaC0C319cb272b00d7E	0x14Ae214196eC4acdEf6699937F507f60F5ebEeB0	7
+    // USDT-UXD	60	0,60	0,60			0x7dC8b9e3B083C26C68f0B124cA923AaEc7FBee39	0xDe09E74d4888Bc4e65F589e8c13Bce9F71DdF4c7	0x685281eCdFce03804D7e6561937656E440b4A27D	8
+    // USDC-UXD	60	0,60	0,60			0x51115241c7b8361EeE88D8610f71d0A92cee5323	0xDe09E74d4888Bc4e65F589e8c13Bce9F71DdF4c7	0xA6258437057bD34b8498631E78A6B5ed90DbfAfA	9
+    // WETH-UXD	60	0,60	0,60			0x42C8C9C0f0A98720dACdaeaC0C319cb272b00d7E	0xDe09E74d4888Bc4e65F589e8c13Bce9F71DdF4c7	0xdAe003be024d63bC471b610AF98d0b470e0Ad41b	10
+    // WLAC-WETH	60	0,60	0,60			0x2911a1AB18546cb501628Be8625C7503a2A7DB54	0x42C8C9C0f0A98720dACdaeaC0C319cb272b00d7E	0x4F178D1D9EAd0E792411685F8FCb6c65Fa6b30D1	11
+
+      "0x14Ae214196eC4acdEf6699937F507f60F5ebEeB0": {
+        farmId: 7,
+        allocPoint: 500,
+        token0: MATE[ChainId.LACHAIN],
+        token1: new Token(ChainId.LACHAIN, "0x42C8C9C0f0A98720dACdaeaC0C319cb272b00d7E", 18, 'WETH', 'WETH'),
+      },
+      "0x685281eCdFce03804D7e6561937656E440b4A27D": {
+        farmId: 8,
+        allocPoint: 60,
+        token0: new Token(ChainId.LACHAIN, "0x7dC8b9e3B083C26C68f0B124cA923AaEc7FBee39", 18, 'USDT', 'USDT'),
+        token1: UXD[ChainId.LACHAIN],
+      },
+      "0xA6258437057bD34b8498631E78A6B5ed90DbfAfA": {
+        farmId: 9,
+        allocPoint: 60,
+        token0: new Token(ChainId.LACHAIN, "0x51115241c7b8361EeE88D8610f71d0A92cee5323", 18, 'USDC', 'USDC'),
+        token1: UXD[ChainId.LACHAIN],
+      },
+      "0xdAe003be024d63bC471b610AF98d0b470e0Ad41b": {
+        farmId: 10,
+        allocPoint: 60,
+        token0: new Token(ChainId.LACHAIN, "0x42C8C9C0f0A98720dACdaeaC0C319cb272b00d7E", 18, 'WETH', 'WETH'),
+        token1: UXD[ChainId.LACHAIN],
+      },
+      "0x4F178D1D9EAd0E792411685F8FCb6c65Fa6b30D1": {
+        farmId: 11,
+        allocPoint: 60,
+        token0: WLAC[ChainId.LACHAIN],
+        token1: new Token(ChainId.LACHAIN, "0x42C8C9C0f0A98720dACdaeaC0C319cb272b00d7E", 18, 'WETH', 'WETH'),
       },
 
       // // * RPF1-RPF2	 550	 5,50	 5,50	0xD6F81be95ABfAbccC7F1af9D05fFa8a412fC3bE3	0x2940d25aD3B57192E66C3d90A0ee5664F6D56317	0x8D22e8F65A6786Ec0F675A7Ab99Bb859270552cA	6
